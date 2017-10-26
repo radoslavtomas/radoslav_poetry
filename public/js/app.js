@@ -996,7 +996,31 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 Vue.component('example-component', __webpack_require__(38));
 
 var app = new Vue({
-  el: '#app'
+    el: '#app'
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Get all "navbar-burger" elements
+    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+            $el.addEventListener('click', function () {
+
+                // Get the target from the "data-target" attribute
+                var target = $el.dataset.target;
+                var $target = document.getElementById(target);
+
+                // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                $el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    }
 });
 
 /***/ }),
@@ -40173,9 +40197,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-271a6867", Component.options)
+    hotAPI.createRecord("data-v-38cf2a96", Component.options)
   } else {
-    hotAPI.reload("data-v-271a6867", Component.options)
+    hotAPI.reload("data-v-38cf2a96", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -40362,7 +40386,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-271a6867", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-38cf2a96", module.exports)
   }
 }
 
