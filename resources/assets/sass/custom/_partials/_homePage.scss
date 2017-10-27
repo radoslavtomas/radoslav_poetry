@@ -1,0 +1,39 @@
+/* Home page
+------------------------------------ */
+
+.is-index {
+  img {
+    margin: 50px auto 0 auto;
+  }
+  a {
+    color: #4a4a4a;
+  }
+  &:hover {
+    color: #0a0a0a;
+  }
+}
+
+#rev-1, #rev-2 {
+  display: inline-block;
+}
+
+.block-revealer__element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.reveal-later {
+  opacity: 0;
+  transition: 1s ease-out;
+}
+
+.reveal {
+  opacity: 1;
+  transition: 1.5s ease-out;
+}

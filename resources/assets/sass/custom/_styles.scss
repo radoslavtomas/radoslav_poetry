@@ -1,0 +1,9 @@
+@import "_partials/loading";
+@import "_partials/navigation";
+@import "_partials/homePage";
+
+// sort out when you will style admin
+.form-bg {
+  background-image: url("/img/nav-bg.png");
+  background-size: 46px 29px;
+}

@@ -1,0 +1,29 @@
+/* Navigation
+------------------------------------ */
+
+.nav-header {
+  background-image: url("/img/nav-bg.png");
+  background-size: 46px 29px;
+  min-height: 5.25rem;
+  border-bottom: 1px solid #ccc;
+
+  .navbar {
+    top: 0.5rem;
+    background-color: transparent;
+
+    .navbar-burger {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .navbar-item {
+
+    img {
+      max-height: 3.25rem;
+    }
+  }
+
+}

@@ -1,47 +1,49 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
+    <div class="container">
+        <section class="section">
+            <div class="columns">
+                <div class="column has-border form-bg has-text-centered is-6-desktop is-offset-3-desktop is-10-touch is-offset-1-touch">
+
+                    <h1 class="title text-center">Reset password</h1>
+
+                    @if ($errors->any())
+                        <div class="notification is-danger">
+                            <button class="delete"></button>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     @endif
 
-                    <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
+                    <form action="{{ route('password.email') }}" method="POST">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input" name="email" type="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+                                <span class="icon is-small is-left">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                            </p>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="field m-t-35">
+                            <p class="control has-text-centered">
+                                <button class="button is-success">
                                     Send Password Reset Link
                                 </button>
-                            </div>
+                            </p>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        </section>
+
+    </div>{{--container ends--}}
+
 @endsection

@@ -5,47 +5,4 @@ a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.i
   background-color: transparent;
 }
 
-body {
-  min-height: 100vh;
-  background-color: #f5f5f5;
-}
-
-.nav-header {
-  background-image: url("/img/nav-bg.png");
-  background-size: 46px 29px;
-  min-height: 5.25rem;
-  border-bottom: 1px solid #ccc;
-
-  .navbar {
-    top: 0.5rem;
-    background-color: transparent;
-
-    .navbar-burger {
-      border: none;
-      outline: none;
-      background-color: transparent;
-      margin-top: 0.5rem;
-    }
-  }
-
-  .navbar-item {
-
-    img {
-      max-height: 3.25rem;
-    }
-  }
-
- }
-
-.has-border {
-  border:1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 1px rgba(57,70,78,.15), 0 20px 55px -8px rgba(57,70,78,.25);
-}
-
-.form-bg {
-  background-image: url("/img/nav-bg.png");
-  background-size: 46px 29px;
-}
-
 

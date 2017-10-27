@@ -52,6 +52,14 @@
                             </button>
                         </p>
                     </div>
+
+                    <div class="has-text-right m-t-20">
+                        <a class="" href="{{ route('password.request') }}">
+                            Forgot Your Password?
+                        </a>
+                    </div>
+
+
                 </form>
             </div>
         </div>
