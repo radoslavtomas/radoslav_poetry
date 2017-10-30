@@ -14327,10 +14327,13 @@ Credit: https://gist.github.com/jacurtis/30da4bf9a6c9b9b5cc0aebac512ca7c9
 
 .is-index a {
   color: #4a4a4a;
+  font-weight: 800;
 }
 
-.is-index:hover {
+.is-index a:hover {
   color: #0a0a0a;
+  border-bottom: 1px solid #3273dc;
+  padding-bottom: 15px;
 }
 
 #rev-1,

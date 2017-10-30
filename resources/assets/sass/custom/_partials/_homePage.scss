@@ -7,9 +7,12 @@
   }
   a {
     color: #4a4a4a;
-  }
-  &:hover {
-    color: #0a0a0a;
+    font-weight: 800;
+    &:hover {
+      color: #0a0a0a;
+      border-bottom: 1px solid #3273dc;
+      padding-bottom: 15px;
+    }
   }
 }
 

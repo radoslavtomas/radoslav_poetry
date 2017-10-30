@@ -31,6 +31,9 @@
 
 @section('styles')
 
+    <style>
+
+    </style>
 
 @stop
 
