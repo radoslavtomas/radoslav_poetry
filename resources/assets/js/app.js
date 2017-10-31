@@ -49,4 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+   $('.fck-trigger').on('mouseenter', function(){
+      $('.fck').addClass('bounceInUp');
+   });
+    $('.fck-trigger').on('mouseleave', function(){
+        $('.fck').removeClass('bounceInUp');
+    });
 });

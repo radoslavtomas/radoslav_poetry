@@ -160,8 +160,8 @@
             <script>
                 var rev1 = new RevealFx(document.querySelector('#rev-3'), {
                     revealSettings: {
-                        bgcolor: '#fcf652',
-                        duration: 1500,
+                        bgcolor: '#ffa726',
+                        duration: 1000,
                         onCover: function (contentEl, revealerEl) {
                             contentEl.style.opacity = 1;
                         }

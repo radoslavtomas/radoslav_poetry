@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     @yield('styles')
 </head>
 <body class="loading">
@@ -57,6 +59,25 @@
     <main>
         @yield('content')
     </main>
+
+    <footer class="footer">
+        <div class="container has-text-centered">
+            <div class="content columns">
+                <div class="column is-4 has-text-centered">
+                    <p><em>Bratislava (SK)</em> | <em>Liverpool (UK)</em></p>
+                </div>
+                <div class="column is-4 has-text-centered">
+                    <p><span class="fck animated">╭∩╮</span>(︶︿︶)<span class="fck animated">╭∩╮</span></p>
+                </div>
+                <div class="column is-4 has-text-centered">
+                    <p><a class="fck-trigger" href="mailto:radoslav.tomas@gmail.com">radoslav.tomas@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="post-footer has-text-centered">
+        <p>☕ 2017</p>
+    </div>
 
 </div>{{--#app ends--}}
 
