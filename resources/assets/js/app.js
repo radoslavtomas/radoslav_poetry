@@ -18,6 +18,7 @@ import Buefy from 'buefy';
 Vue.use(Buefy);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('contactform', require('./components/ContactFormComponent.vue'));
 
 const app = new Vue({
     el: '#app'

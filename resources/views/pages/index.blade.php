@@ -3,36 +3,48 @@
 
 @section('content')
 
-    <div class="container">
-        <section class="section">
-            <div class="columns">
-                <div class="column is-index is-poiret has-text-centered is-8-desktop is-offset-2-desktop is-10-touch is-offset-1-touch">
+    <div class="my-hero">
+        <div class="columns">
+            <div class="column is-index is-poiret has-text-centered is-8-desktop is-offset-2-desktop is-10-touch is-offset-1-touch">
 
-                    <h2 id="rev-1" class="title text-center is-size-1-desktop is-size-3-touch">Radoslav Tomas</h2>
-                    <br>
-                    <h4 id="rev-2" class="is-size-4-desktop is-size-5-touch">Poet</h4>
+                <h2 id="rev-1" class="title text-center is-size-1-desktop is-size-3-touch">Radoslav Tomas</h2>
+                <br>
+                <h4 id="rev-2" class="is-size-4-desktop is-size-5-touch">Poet</h4>
 
-                    <div class="reveal-later">
-                        <img src="/img/logo-1.png" alt="Radoslav Tomas Logo" class="image is-96x96">
-                        <div class="m-t-50">
-                            <a href="{{ route('books') }}" class="m-r-20">Books</a>
-                            <a href="{{ route('about') }}" class="m-r-20">About me</a>
-                            <a href="#" class="">Contact</a>
-                        </div>
+                <div class="reveal-later">
+                    <img src="/img/logo-1.png" alt="Radoslav Tomas Logo" class="image is-96x96">
+                    <div class="m-t-50">
+                        <a href="{{ route('books') }}" class="m-r-20">Books</a>
+                        <a href="{{ route('about') }}" class="m-r-20">About me</a>
+                        <a href="{{ route('contact') }}" class="">Contact</a>
                     </div>
-
                 </div>
-            </div>
-        </section>
 
-    </div>{{--container ends--}}
+            </div>
+        </div>
+    </div>
 
 @stop
 
 @section('styles')
 
     <style>
+        .my-hero {
+            display: flex;
+            height: calc(100vh - 5.25rem);
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background: url('/img/index.jpg') center center no-repeat;
+            background-size: cover;
+            /*background-attachment: fixed;*/
+        }
 
+        .my-hero .columns {
+            width: 80%;
+            padding: 30px 40px;
+            background-color: rgba(0,0,0,.3);
+        }
     </style>
 
 @stop

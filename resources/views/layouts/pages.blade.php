@@ -42,7 +42,7 @@
                         <a href="{{ route('about') }}" class="navbar-item is-tab">About me</a>
                         <a href="{{ route('books') }}" class="navbar-item is-tab">Books</a>
                         <a href="{{ route('links')}}" class="navbar-item is-tab">Links</a>
-                        <a href="#" class="navbar-item is-tab">Contact</a>
+                        <a href="{{ route('contact') }}" class="navbar-item is-tab">Contact</a>
                         <hr class="dropdown-divider">
                         <div class="navbar-item lan">
                             <a href="#" class="m-r-5">sk</a>/
@@ -54,7 +54,7 @@
         </div>{{--navbar ends--}}
     </header>{{--header ends--}}
 
-    <main class="p-t-30">
+    <main>
         @yield('content')
     </main>
 

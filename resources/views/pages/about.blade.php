@@ -3,11 +3,12 @@
 
 @section('content')
 
-    <div class="container">
+
         <section class="hero is-medium">
+            <div class="container">
             <div class="hero-body">
                 <div class="wrapper" id="rev-3">
-                    <h1 class="title">
+                    <h1 class="title is-poiret">
                         About me
                     </h1>
                     <h2 class="subtitle">
@@ -15,6 +16,7 @@
                     </h2>
 
                 </div>
+            </div>
             </div>
         </section>
         <section class="section is-about">
@@ -38,7 +40,6 @@
                 </div>
             </div>
         </section>
-
 @stop
 
 @section('styles')

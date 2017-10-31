@@ -3,11 +3,11 @@
 
 @section('content')
 
-    <div class="container">
         <section class="hero is-medium">
+            <div class="container">
             <div class="hero-body">
                 <div class="wrapper" id="rev-3">
-                    <h1 class="title">
+                    <h1 class="title is-poiret">
                         Books
                     </h1>
                     <h2 class="subtitle">
@@ -15,6 +15,7 @@
                     </h2>
 
                 </div>
+            </div>
             </div>
         </section>
         <section class="section is-books">
@@ -112,13 +113,12 @@
                 </div>
             </div>
         </section>
-
         @stop
 
         @section('styles')
             <style>
                 .hero {
-                    background: url('/img/krst.jpg') center center no-repeat;
+                    background: url('/img/about-2.jpg') center center no-repeat;
                     background-size: cover;
                 }
 
