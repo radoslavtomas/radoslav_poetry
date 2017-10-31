@@ -14364,6 +14364,11 @@ Credit: https://gist.github.com/jacurtis/30da4bf9a6c9b9b5cc0aebac512ca7c9
   transition: 1.5s ease-out;
 }
 
+.is-about img {
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
 .form-bg {
   background-image: url("/img/nav-bg.png");
   background-size: 46px 29px;

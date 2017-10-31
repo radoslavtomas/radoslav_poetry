@@ -10,4 +10,19 @@ class PagesController extends Controller
 	{
 		return view('pages.index');
     }
+
+	public function about()
+	{
+		return view('pages.about');
+	}
+
+	public function books()
+	{
+		return view('pages.books');
+	}
+
+	public function links()
+	{
+		return view('pages.links');
+	}
 }

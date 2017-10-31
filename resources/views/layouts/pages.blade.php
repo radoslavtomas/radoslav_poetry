@@ -38,10 +38,10 @@
                         {{--content--}}
                     </div>
                     <div class="navbar-end">
-                        <a href="#" class="navbar-item is-tab">Home</a>
-                        <a href="#" class="navbar-item is-tab">About me</a>
-                        <a href="#" class="navbar-item is-tab">Books</a>
-                        <a href="#" class="navbar-item is-tab">Links</a>
+                        <a href="{{ route('index') }}" class="navbar-item is-tab">Home</a>
+                        <a href="{{ route('about') }}" class="navbar-item is-tab">About me</a>
+                        <a href="{{ route('books') }}" class="navbar-item is-tab">Books</a>
+                        <a href="{{ route('links')}}" class="navbar-item is-tab">Links</a>
                         <a href="#" class="navbar-item is-tab">Contact</a>
                         <hr class="dropdown-divider">
                         <div class="navbar-item lan">

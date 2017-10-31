@@ -25,6 +25,8 @@ const app = new Vue({
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    document.body.classList.remove('loading');
+
     // Get all "navbar-burger" elements
     var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
