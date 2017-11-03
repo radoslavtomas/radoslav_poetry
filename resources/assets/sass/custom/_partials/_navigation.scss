@@ -17,6 +17,13 @@
       background-color: transparent;
       margin-top: 0.5rem;
     }
+
+    .navbar-brand {
+      img {
+        display: inline-block;
+        animation-duration:0.8s;
+      }
+    }
   }
 
   .navbar-item {

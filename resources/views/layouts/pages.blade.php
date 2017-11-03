@@ -23,8 +23,8 @@
         <div class="navbar is-transparent">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="{{ route('index') }}">
-                        <img src="{{ asset('img/logo-1.png') }}" alt="Radoslav Tomas Logo" class="m-r-10">
+                    <a class="navbar-item animLogo" href="{{ route('index') }}">
+                        <img src="{{ asset('img/logo-1.png') }}" alt="Radoslav Tomas Logo" class="logo animated m-r-10">
                         <span class="title is-poiret is-size-3-desktop is-size-5-touch">Radoslav Tomas</span>
                     </a>
 
@@ -63,14 +63,15 @@
     <footer class="footer">
         <div class="container has-text-centered">
             <div class="content columns">
-                <div class="column is-4 has-text-centered">
+                <div class="column is-6 has-text-centered">
                     <p><em>Bratislava (SK)</em> | <em>Liverpool (UK)</em></p>
                 </div>
-                <div class="column is-4 has-text-centered">
-                    <p><span class="fck animated">╭∩╮</span>(︶︿︶)<span class="fck animated">╭∩╮</span></p>
-                </div>
-                <div class="column is-4 has-text-centered">
-                    <p><a class="fck-trigger" href="mailto:radoslav.tomas@gmail.com">radoslav.tomas@gmail.com</a></p>
+                {{--<div class="column is-4 has-text-centered fck-trigger">--}}
+                    {{--<p><span class="fck animated">╭∩╮</span>(︶︿︶)<span class="fck animated">╭∩╮</span></p>--}}
+                    {{--<p class="is-poiret" style="font-weight: 800;">poetry rocks!</p>--}}
+                {{--</div>--}}
+                <div class="column is-6 has-text-centered">
+                    <p><a href="mailto:radoslav.tomas@gmail.com">radoslav.tomas@gmail.com</a></p>
                 </div>
             </div>
         </div>

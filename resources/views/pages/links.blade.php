@@ -19,48 +19,19 @@
             </div>
             </div>
         </section>
-        <section class="section is-about">
+        <section class="section is-links">
             <div class="columns">
-                <div class="column is-8 is-offset-2">
-                    <p>Originally from Slovakia, I currently live in Liverpool, UK. I studied journalism but poetry has always been a way of expressing that suited me the most.
-                    </p>
-                    <br>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column is-8 is-offset-2">
+                <div class="column is-8 is-offset-2 has-text-centered">
+                    <h3 class="is-size-3 is-poiret m-b-20">Interviews</h3>
+                    <ul class="myInterviews">
+                        <li class="myInterview"><small>sme.sk</small> - <a href="#">To, že rozmýšľam nad básňami, zo mňa nerobí lepšieho človeka</a></li>
+                        <li class="myInterview"><small>bookportrait.sk</small> - <a href="#">Strážay v interiéri Radoslava Tomáša</a></li>
+                        <li class="myInterview"><small>CIL</small> - <a href="#">Profile in The Centre for Information on Literature</a></li>
+                        <li class="myInterview"><small>martinus.sk</small> - <a href="#">Poézia nie je zisková, je to záležitosť menšiny</a></li>
+                    </ul>
+                    <h3 class="is-size-3 is-poiret m-b-20">Video</h3>
+                    <iframe width="482" height="270" border="0" frameborder="0" scrolling="no" style="padding:0px; margin:0px; border: 0px;" src="//www.sme.sk/vp/17238/" allowFullScreen></iframe>
 
-                    <div class="columns">
-                        <div class="field column is-6">
-                            <p class="control has-icons-left">
-                                <input class="input" name="name" type="text" placeholder="Name">
-                                <span class="icon is-small is-left">
-                              <i class="fa fa-user"></i>
-                            </span>
-                            </p>
-                        </div>
-
-                        <div class="field column is-6">
-                            <p class="control has-icons-left has-icons-right">
-                                <input class="input" name="email" type="email" placeholder="Email">
-                                <span class="icon is-small is-left">
-                                    <i class="fa fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                    <i class="fa fa-check"></i>
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="field">
-                        <div class="control">
-                            <textarea class="textarea" name="message" placeholder="Write me..."></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     @stop
 
@@ -83,6 +54,55 @@
                 display: inline-block;
                 padding: 15px 25px;
                 background-color: rgba(0,0,0,.4);
+            }
+
+            .myInterviews {
+                overflow: hidden;
+                padding: 15px 10px;
+            }
+
+            .myInterview {
+                margin-bottom: 20px;
+            }
+
+            .myInterview small {
+                color: #B9121B;
+            }
+
+            .myInterview a {
+                color: #4a4a4a;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .myInterview a:before {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: #B9121B;
+                position: absolute;
+                top: 0;
+                left: 500%;
+                transition: left 0.3s ease-in-out;
+            }
+            .myInterview a:hover:before {
+                left: 0;
+                transition: left 0.3s ease-in-out;
+            }
+
+            .myInterview a:after {
+                content: '↗';
+                position: absolute;
+                font-size: 16px;
+                top: -16px;
+                right: -9999px;
+                color: #B9121B;
+                transition: right 0.3s ease-in-out;
+            }
+
+            .myInterview a:hover:after {
+                right: -8px;
+                transition: right 0.3s ease-in-out;
             }
         </style>
 

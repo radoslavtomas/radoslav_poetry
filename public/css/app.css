@@ -14314,6 +14314,12 @@ Credit: https://gist.github.com/jacurtis/30da4bf9a6c9b9b5cc0aebac512ca7c9
   margin-top: 0.5rem;
 }
 
+.nav-header .navbar .navbar-brand img {
+  display: inline-block;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+}
+
 .nav-header .navbar-item img {
   max-height: 3.25rem;
 }
@@ -14337,8 +14343,6 @@ Credit: https://gist.github.com/jacurtis/30da4bf9a6c9b9b5cc0aebac512ca7c9
 
 .is-index a:hover {
   color: navajowhite;
-  border-bottom: 1px solid #3273dc;
-  padding-bottom: 15px;
 }
 
 #rev-1,

@@ -1111,6 +1111,8 @@ var app = new Vue({
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // ----- Mobile navigation handler -----
+    // -------------------------------------
     document.body.classList.remove('loading');
 
     // Get all "navbar-burger" elements
@@ -1134,12 +1136,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    $('.fck-trigger').on('mouseenter', function () {
-        $('.fck').addClass('bounceInUp');
+    // ----- Changing src attribute on logo -----
+    // ------------------------------------------
+    document.querySelector('.animLogo').addEventListener('mouseenter', function () {
+        document.querySelector('.logo').classList.add('bounceOut');
+        document.querySelector('.logo').addEventListener('animationend', function () {
+            document.querySelector('.logo').src = '/img/logo-2.png';
+            document.querySelector('.logo').classList.remove('bounceOut');
+        });
     });
-    $('.fck-trigger').on('mouseleave', function () {
-        $('.fck').removeClass('bounceInUp');
+    document.querySelector('.animLogo').addEventListener('mouseleave', function () {
+        document.querySelector('.logo').src = '/img/logo-1.png';
     });
+
+    // ----- Animating japan emoticon in footer -----
+    // ----------------------------------------------
+    // $('.fck-trigger').on('mouseenter', function(){
+    //    $('.fck').addClass('bounceInUp');
+    // });
+    //  $('.fck-trigger').on('mouseleave', function(){
+    //      $('.fck').removeClass('bounceInUp');
+    //  });
 });
 
 /***/ }),
