@@ -30,8 +30,11 @@
                         <li class="myInterview"><small>martinus.sk</small> - <a href="#">Poézia nie je zisková, je to záležitosť menšiny</a></li>
                     </ul>
                     <h3 class="is-size-3 is-poiret m-b-20">Video</h3>
-                    <iframe width="482" height="270" border="0" frameborder="0" scrolling="no" style="padding:0px; margin:0px; border: 0px;" src="//www.sme.sk/vp/17238/" allowFullScreen></iframe>
-
+                    <div class="videoWrapper">
+                        <iframe width="482" height="270" border="0" frameborder="0" scrolling="no" style="padding:0px; margin:0px; border: 0px;" src="//www.sme.sk/vp/17238/" allowFullScreen></iframe>
+                    </div>
+                </div>
+            </div>
         </section>
     @stop
 
@@ -101,8 +104,22 @@
             }
 
             .myInterview a:hover:after {
-                right: -8px;
+                right: -9px;
                 transition: right 0.3s ease-in-out;
+            }
+
+            .videoWrapper {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                padding-top: 25px;
+                height: 0;
+            }
+            .videoWrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
             }
         </style>
 

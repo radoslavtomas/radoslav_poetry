@@ -45,7 +45,7 @@
                             </div>
 
                             <div class="column is-4 has-text-centered">
-                                <img src="{{ asset('img/statusovehlasenia_obalka.png') }}">
+                                <img src="{{ asset('img/covers/status_reports_cover.png') }}">
                             </div>
                         </div>
 
@@ -75,7 +75,7 @@
                             </div>
 
                             <div class="column is-4 has-text-centered">
-                                <img src="{{ asset('img/vlciescadby_obalka.png') }}">
+                                <img src="{{ asset('img/covers/wolves_weddings_cover.png') }}">
                             </div>
                         </div>
 
@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="column is-4 has-text-centered">
-                                <img src="{{ asset('img/chlapec_obalka.png') }}">
+                                <img src="{{ asset('img/covers/boy_cover.png') }}">
                             </div>
                         </div>
 
@@ -118,7 +118,7 @@
         @section('styles')
             <style>
                 .hero {
-                    background: url('/img/about-2.jpg') center center no-repeat;
+                    background: url('/img/books.jpg') center center no-repeat;
                     background-size: cover;
                 }
 

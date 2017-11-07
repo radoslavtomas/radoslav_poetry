@@ -36,7 +36,7 @@
             width: 100%;
             justify-content: center;
             align-items: center;
-            background: url('/img/krst.jpg') center center no-repeat;
+            background: url('/img/contact.jpg') center center no-repeat;
             background-size: cover;
             /*background-attachment: fixed;*/
         }

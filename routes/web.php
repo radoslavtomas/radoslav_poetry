@@ -16,6 +16,7 @@ Route::get('about', 'PagesController@about')->name('about');
 Route::get('books', 'PagesController@books')->name('books');
 Route::get('links', 'PagesController@links')->name('links');
 Route::get('contact', 'PagesController@contact')->name('contact');
+Route::get('book', 'PagesController@book')->name('book');
 
 Auth::routes();
 

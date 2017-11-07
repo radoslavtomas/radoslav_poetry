@@ -16,6 +16,57 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     @yield('styles')
+
+    <style>
+        .language button {
+            border: 1px solid #ccc;
+            background-color: transparent;
+        }
+
+        @media (max-width: 1024px) {
+            .dropdown.is-right .dropdown-menu {
+                left: 0;
+                right: auto;
+            }
+        }
+
+        .footer {
+            background-color: #353535;
+            color: black;
+            padding: 1rem;
+            border-top: 1px solid #ccc;
+        }
+
+        .footer .is-pulled-left {
+            font-size: 1.15rem;
+            line-height: 1.15rem;
+        }
+
+        .footer .is-pulled-left span {
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+
+        .footer .is-pulled-left a {
+            color: black;
+        }
+
+        .footer .is-pulled-left a:hover {
+            color: grey;
+        }
+
+        .footer .is-pulled-right a:nth-child(1) {
+            color: hsl(141, 71%, 48%);
+        }
+
+        .footer .is-pulled-right a:nth-child(2) {
+            color: #365899;
+        }
+
+        .footer .is-pulled-right a:nth-child(3) {
+            color: #00AFF0;
+        }
+    </style>
 </head>
 <body class="loading">
 <div id="app">
@@ -46,10 +97,26 @@
                         <a href="{{ route('links')}}" class="navbar-item is-tab">Links</a>
                         <a href="{{ route('contact') }}" class="navbar-item is-tab">Contact</a>
                         <hr class="dropdown-divider">
-                        <div class="navbar-item lan">
-                            <a href="#" class="m-r-5">sk</a>/
-                            <a href="#" class="m-l-5">en</a>
+
+                        <div class="navbar-item">
+                            <div class="dropdown is-right is-hoverable language">
+                                <div class="dropdown-trigger">
+                                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                        <span>en</span>
+                                        <span class="m-l-5">
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                    <div class="dropdown-content">
+                                        <a href="#" class="dropdown-item">english</a>
+                                        <a class="dropdown-item">slovak</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>{{--container ends--}}
@@ -60,25 +127,25 @@
         @yield('content')
     </main>
 
-    <footer class="footer">
-        <div class="container has-text-centered">
-            <div class="content columns">
-                <div class="column is-6 has-text-centered">
-                    <p><em>Bratislava (SK)</em> | <em>Liverpool (UK)</em></p>
-                </div>
-                {{--<div class="column is-4 has-text-centered fck-trigger">--}}
-                    {{--<p><span class="fck animated">╭∩╮</span>(︶︿︶)<span class="fck animated">╭∩╮</span></p>--}}
-                    {{--<p class="is-poiret" style="font-weight: 800;">poetry rocks!</p>--}}
-                {{--</div>--}}
-                <div class="column is-6 has-text-centered">
-                    <p><a href="mailto:radoslav.tomas@gmail.com">radoslav.tomas@gmail.com</a></p>
-                </div>
+    <footer class="footer form-bg">
+        <div class="container is-clearfix">
+            <p class="is-pulled-left is-poiret"><a href="{{ route('index') }}">Radoslav Tomas</a> | <span><?php echo date("Y"); ?></span></p>
+            <div class="is-pulled-right">
+                <a class="m-r-20">
+                    <i class="fa fa-envelope-o"></i>
+                </a>
+                <a class="m-r-20">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a>
+                    <i class="fa fa-skype"></i>
+                </a>
             </div>
         </div>
     </footer>
-    <div class="post-footer has-text-centered">
-        <p>☕ 2017</p>
-    </div>
+    {{--<div class="post-footer has-text-centered form-bg">--}}
+        {{--<p><em>Bratislava (SK)</em> | <em>Liverpool (UK)</em> 2017</p>--}}
+    {{--</div>--}}
 
 </div>{{--#app ends--}}
 

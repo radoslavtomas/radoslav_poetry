@@ -30,4 +30,9 @@ class PagesController extends Controller
 	{
 		return view('pages.contact');
 	}
+
+	public function book()
+	{
+		return view('pages.book');
+	}
 }

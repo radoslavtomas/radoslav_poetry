@@ -45,7 +45,7 @@
 @section('styles')
     <style>
         .hero {
-            background: url('/img/about-4.jpg') center center no-repeat;
+            background: url('/img/about.jpg') center center no-repeat;
             background-size: cover;
             /*background-attachment: fixed;*/
         }
