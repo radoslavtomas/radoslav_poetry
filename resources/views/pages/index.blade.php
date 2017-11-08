@@ -7,9 +7,9 @@
         <div class="columns">
             <div class="column is-index is-poiret has-text-centered is-8-desktop is-offset-2-desktop is-10-touch is-offset-1-touch">
 
-                <h2 id="rev-1" class="title text-center is-size-1-desktop is-size-3-touch">Radoslav Tomas</h2>
+                <h2 id="rev-1" class="title text-center is-size-1-desktop is-size-3-touch">{{ $user->name }}</h2>
                 <br>
-                <h4 id="rev-2" class="is-size-4-desktop is-size-5-touch">Poet</h4>
+                <h4 id="rev-2" class="is-size-4-desktop is-size-5-touch">{{ $user->profile->occupation }}</h4>
 
                 <div class="reveal-later">
                     <img src="/img/logo-1.png" alt="Radoslav Tomas Logo" class="image is-96x96" style="display: inline-block;">

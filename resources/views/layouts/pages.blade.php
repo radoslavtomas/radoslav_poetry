@@ -76,7 +76,7 @@
                 <div class="navbar-brand">
                     <a class="navbar-item animLogo" href="{{ route('index') }}">
                         <img src="{{ asset('img/logo-1.png') }}" alt="Radoslav Tomas Logo" class="logo animated m-r-10">
-                        <span class="title is-poiret is-size-3-desktop is-size-5-touch">Radoslav Tomas</span>
+                        <span class="title is-poiret is-size-3-desktop is-size-5-touch">{{ $user->name }}</span>
                     </a>
 
                     <button class="button navbar-burger" data-target="navMenu">
@@ -129,23 +129,20 @@
 
     <footer class="footer form-bg">
         <div class="container is-clearfix">
-            <p class="is-pulled-left is-poiret"><a href="{{ route('index') }}">Radoslav Tomas</a> | <span><?php echo date("Y"); ?></span></p>
+            <p class="is-pulled-left is-poiret"><a href="{{ route('index') }}">{{ $user->name }}</a> | <span><?php echo date("Y"); ?></span></p>
             <div class="is-pulled-right">
-                <a class="m-r-20">
+                <a href="mailto:{{ $user->email }}" class="m-r-20">
                     <i class="fa fa-envelope-o"></i>
                 </a>
-                <a class="m-r-20">
+                <a href="{{ $user->profile->facebook }}" target="_blank" class="m-r-20">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a>
+                <a href="skype:{{ $user->profile->skype }}?userinfo">
                     <i class="fa fa-skype"></i>
                 </a>
             </div>
         </div>
     </footer>
-    {{--<div class="post-footer has-text-centered form-bg">--}}
-        {{--<p><em>Bratislava (SK)</em> | <em>Liverpool (UK)</em> 2017</p>--}}
-    {{--</div>--}}
 
 </div>{{--#app ends--}}
 
