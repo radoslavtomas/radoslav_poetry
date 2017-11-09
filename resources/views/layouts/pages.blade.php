@@ -12,61 +12,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     @yield('styles')
 
-    <style>
-        .language button {
-            border: 1px solid #ccc;
-            background-color: transparent;
-        }
-
-        @media (max-width: 1024px) {
-            .dropdown.is-right .dropdown-menu {
-                left: 0;
-                right: auto;
-            }
-        }
-
-        .footer {
-            background-color: #353535;
-            color: black;
-            padding: 1rem;
-            border-top: 1px solid #ccc;
-        }
-
-        .footer .is-pulled-left {
-            font-size: 1.15rem;
-            line-height: 1.15rem;
-        }
-
-        .footer .is-pulled-left span {
-            font-size: 1rem;
-            line-height: 1rem;
-        }
-
-        .footer .is-pulled-left a {
-            color: black;
-        }
-
-        .footer .is-pulled-left a:hover {
-            color: grey;
-        }
-
-        .footer .is-pulled-right a:nth-child(1) {
-            color: hsl(141, 71%, 48%);
-        }
-
-        .footer .is-pulled-right a:nth-child(2) {
-            color: #365899;
-        }
-
-        .footer .is-pulled-right a:nth-child(3) {
-            color: #00AFF0;
-        }
-    </style>
 </head>
 <body class="loading">
 <div id="app">

@@ -1,16 +1,14 @@
-@import "_partials/loading";
-@import "_partials/navigation";
-@import "_partials/hero";
-@import "_partials/hero-myHero";
+// Pages style
 @import "_pages/homePage";
 @import "_pages/aboutPage";
 @import "_pages/booksPage";
 @import "_pages/linksPage";
 @import "_pages/contactPage";
-@import "_partials/footer";
 
-// sort out when you will style admin
-.form-bg {
-  background-image: url("/img/nav-bg.png");
-  background-size: 46px 29px;
-}
+//Partials
+@import "_partials/loading";
+@import "_partials/navigation";
+@import "_partials/hero";
+@import "_partials/hero-myHero";
+@import "_partials/language_button";
+@import "_partials/footer";

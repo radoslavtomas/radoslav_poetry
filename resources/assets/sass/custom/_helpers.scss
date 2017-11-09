@@ -28,3 +28,9 @@ $sides: (top, bottom, left, right); // Leave this variable alone
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(57,70,78,.15), 0 20px 55px -8px rgba(57,70,78,.25);
 }
+
+// custom background
+.form-bg {
+  background-image: url("/img/nav-bg.png");
+  background-size: 46px 29px;
+}

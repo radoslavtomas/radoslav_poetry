@@ -1,20 +1,36 @@
 .footer {
   background-color: #353535;
-  color: #828282;
-  padding: 3rem 1.5rem 2rem;
+  color: black;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
 }
 
-.footer a:hover {
-  color: #bec6d2;
+.footer .is-pulled-left {
+  font-size: 1.15rem;
+  line-height: 1.15rem;
 }
 
-.fck {
-  display: inline-block;
+.footer .is-pulled-left span {
+  font-size: 1rem;
+  line-height: 1rem;
 }
 
-.post-footer {
-  border-top: 1px dotted #524a4a;
-  background-color: #353535;
-  color: #828282;
-  padding: 0.5rem 0;
+.footer .is-pulled-left a {
+  color: black;
+}
+
+.footer .is-pulled-left a:hover {
+  color: grey;
+}
+
+.footer .is-pulled-right a:nth-child(1) {
+  color: hsl(141, 71%, 48%);
+}
+
+.footer .is-pulled-right a:nth-child(2) {
+  color: #365899;
+}
+
+.footer .is-pulled-right a:nth-child(3) {
+  color: #00AFF0;
 }

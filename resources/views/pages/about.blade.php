@@ -42,20 +42,17 @@
 
 @section('scripts')
 
-            <script src="/js/anime.min.js"></script>
-            <script src="/js/main.js"></script>
-
-            <script>
-                var rev1 = new RevealFx(document.querySelector('#rev-3'), {
-                    revealSettings: {
-                        bgcolor: '#1de9b6',
-                        duration: 1000,
-                        onCover: function (contentEl, revealerEl) {
-                            contentEl.style.opacity = 1;
-                        }
-                    }
-                });
-                rev1.reveal();
-            </script>
+    <script>
+        var rev1 = new RevealFx(document.querySelector('#rev-3'), {
+            revealSettings: {
+                bgcolor: '#1de9b6',
+                duration: 1000,
+                onCover: function (contentEl, revealerEl) {
+                    contentEl.style.opacity = 1;
+                }
+            }
+        });
+        rev1.reveal();
+    </script>
 
 @stop

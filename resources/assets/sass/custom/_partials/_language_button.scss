@@ -1,0 +1,11 @@
+.language button {
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+@media (max-width: 1024px) {
+  .dropdown.is-right .dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+}

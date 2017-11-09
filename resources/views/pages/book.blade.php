@@ -127,9 +127,6 @@
 
 @section('scripts')
 
-    <script src="/js/anime.min.js"></script>
-    <script src="/js/main.js"></script>
-
     <script>
         var rev1 = new RevealFx(document.querySelector('#rev-3'), {
             revealSettings: {

@@ -1,6 +1,7 @@
 
 // Fonts
 //@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
 @import "~font-awesome/scss/font-awesome";
 
 // Variables
@@ -11,6 +12,9 @@
 
 // Buefy
 @import "~buefy/lib/buefy.min.css";
+
+// Animate.css
+@import "~animate.css/animate.min.css";
 
 // Custom styles
 @import "custom/overrides";
