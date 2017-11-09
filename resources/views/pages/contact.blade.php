@@ -3,7 +3,7 @@
 
 @section('content')
         <div class="my-hero">
-            <form id="rev-3" action="#">
+            <form class="wrapper" id="rev-3" action="#">
                 <div class="columns">
                     <div class="field column is-6">
                         <p class="control">
@@ -31,23 +31,9 @@
 @section('styles')
     <style>
         .my-hero {
-            display: flex;
-            height: calc(100vh - 5.25rem);
-            width: 100%;
-            justify-content: center;
-            align-items: center;
             background: url('/img/contact.jpg') center center no-repeat;
             background-size: cover;
-            /*background-attachment: fixed;*/
         }
-
-        .my-hero form {
-            width: 80%;
-            padding: 30px 40px;
-            background-color: rgba(0,0,0,.4);
-        }
-
-
     </style>
 
 @stop

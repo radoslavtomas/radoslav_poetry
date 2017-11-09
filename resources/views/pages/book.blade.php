@@ -121,32 +121,6 @@
             background-size: cover;
         }
 
-        .hero h1 {
-            color: white;
-
-        }
-        .hero h2 {
-            color: white;
-        }
-        .wrapper {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: rgba(0,0,0,.4);
-        }
-
-        .is-books img {
-            max-width: 200px;
-        }
-
-        .is-books article {
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 20px;
-        }
-
-        .is-books article:last-child {
-            border-bottom: none;
-        }
-
     </style>
 
 @stop

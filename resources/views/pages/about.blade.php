@@ -1,56 +1,40 @@
 @extends('layouts.pages')
 
-
 @section('content')
 
+    <section class="hero is-medium">
+        <div class="container">
+        <div class="hero-body">
+            <div class="wrapper" id="rev-3">
+                <h1 class="title is-poiret">
+                    About me
+                </h1>
+                <h2 class="subtitle">
+                    and my poetry
+                </h2>
 
-        <section class="hero is-medium">
-            <div class="container">
-            <div class="hero-body">
-                <div class="wrapper" id="rev-3">
-                    <h1 class="title is-poiret">
-                        About me
-                    </h1>
-                    <h2 class="subtitle">
-                        and my poetry
-                    </h2>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="section is-about">
+        <div class="columns">
+            <div class="column is-8 is-offset-2">
 
+                <div class="content">
+                    {{ $user->profile->about }}
                 </div>
-            </div>
-            </div>
-        </section>
-        <section class="section is-about">
-            <div class="columns">
-                <div class="column is-8 is-offset-2">
 
-                    <div class="content">
-                        {{ $user->profile->about }}
-                    </div>
-
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 @stop
 
 @section('styles')
     <style>
         .hero {
-            background: url('/img/about.jpg') center center no-repeat;
+            background: url({{ asset('img/about.jpg') }}) center center no-repeat;
             background-size: cover;
-            /*background-attachment: fixed;*/
-        }
-
-        .hero h1 {
-            color: white;
-
-        }
-        .hero h2 {
-            color: white;
-        }
-        .wrapper {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: rgba(0,0,0,.4);
         }
     </style>
 

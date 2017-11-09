@@ -1,7 +1,12 @@
 @import "_partials/loading";
 @import "_partials/navigation";
-@import "_partials/homePage";
-@import "_partials/aboutPage";
+@import "_partials/hero";
+@import "_partials/hero-myHero";
+@import "_pages/homePage";
+@import "_pages/aboutPage";
+@import "_pages/booksPage";
+@import "_pages/linksPage";
+@import "_pages/contactPage";
 @import "_partials/footer";
 
 // sort out when you will style admin
