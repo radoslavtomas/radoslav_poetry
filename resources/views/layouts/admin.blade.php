@@ -44,7 +44,7 @@
                                     <a class="navbar-link">Howdy Rado</a>
 
                                     <div class="navbar-dropdown">
-                                        <a href="#" class="navbar-item">Profile</a>
+                                        <a href="{{ route('getProfile') }}" class="navbar-item">Profile</a>
                                         <a href="#" class="navbar-item">Settings</a>
                                         <hr class="navbar-divider">
                                         <a href="" class="navbar-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -60,8 +60,10 @@
             </div>{{--navbar ends--}}
         </header>{{--header ends--}}
 
-        <main class="p-t-30">
-            @yield('content')
+        <main>
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
 
     </div>{{--#app ends--}}

@@ -23,7 +23,13 @@
                 <div class="navbar-brand">
                     <a class="navbar-item animLogo" href="{{ route('index') }}">
                         <img src="{{ asset('img/logo-1.png') }}" alt="Radoslav Tomas Logo" class="logo animated m-r-10">
-                        <span class="title is-poiret is-size-3-desktop is-size-5-touch">{{ $user->name }}</span>
+                        <span class="title is-poiret is-size-3-desktop is-size-5-touch">
+                            @if( app()->getLocale() == 'en' )
+                                {{ $user->name }}
+                            @elseif( app()->getLocale() == 'sk' )
+                                {{ $user->profile->name_sk }}
+                            @endif
+                        </span>
                     </a>
 
                     <button class="button navbar-burger" data-target="navMenu">
@@ -85,7 +91,14 @@
 
     <footer class="footer form-bg">
         <div class="container is-clearfix">
-            <p class="is-pulled-left is-poiret"><a href="{{ route('index') }}">{{ $user->name }}</a> | <span><?php echo date("Y"); ?></span></p>
+            <p class="is-pulled-left is-poiret">
+                <a href="{{ route('index') }}">
+                    @if( app()->getLocale() == 'en' )
+                        {{ $user->name }}
+                    @elseif( app()->getLocale() == 'sk' )
+                        {{ $user->profile->name_sk }}
+                    @endif
+                </a> | <span><?php echo date("Y"); ?></span></p>
             <div class="is-pulled-right">
                 <a href="mailto:{{ $user->email }}" class="m-r-20">
                     <i class="fa fa-envelope-o"></i>

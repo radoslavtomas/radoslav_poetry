@@ -38,4 +38,16 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->prefix('admin')->group(function() {
+	Route::get('dashboard', 'AdminController@getDashboard')->name('getDashboard');
+
+	Route::get('profile', 'AdminController@getProfile')->name('getProfile');
+	Route::post('profile', 'AdminController@postProfile')->name('postProfile');
+
+//	Route::get('about', 'AdminController@getAbout')->name('getAbout');
+//	Route::post('about', 'AdminController@postAbout')->name('postAbout');
+//
+//	Route::resource('portfolio', 'PortfolioController');
+//
+//	Route::resource('profile', 'ProfileController');
+});

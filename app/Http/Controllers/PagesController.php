@@ -2,19 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 
 class PagesController extends Controller
 {
 	public function index()
 	{
-		return view('pages.index');
+		if ( App::getLocale() == 'en' )
+		{
+			$user = User::first();
+			$name = $user->name;
+			$occupation = $user->profile->occupation;
+			return view('pages.index')
+				->with('name', $name)
+				->with('occupation', $occupation);
+		}
+		elseif ( App::getLocale() == 'sk' )
+		{
+			$user = User::first();
+			$name = $user->profile->name_sk;
+			$occupation = $user->profile->occupation_sk;
+			return view('pages.index')
+				->with('name', $name)
+				->with('occupation', $occupation);
+		}
     }
 
 	public function about()
 	{
-		return view('pages.about');
+		if ( App::getLocale() == 'en' )
+		{
+			$user = User::first();
+			$about = $user->profile->about;
+			return view('pages.about')
+				->with('about', $about);
+		}
+		elseif ( App::getLocale() == 'sk' )
+		{
+			$user = User::first();
+			$about = $user->profile->about_sk;
+			return view('pages.about')
+				->with('about', $about);
+		}
 	}
 
 	public function books()
