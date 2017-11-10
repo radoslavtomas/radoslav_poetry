@@ -8,10 +8,10 @@
             <div class="hero-body">
                 <div class="wrapper" id="rev-3">
                     <h1 class="title is-poiret">
-                        Books
+                        {{ __('menu.books') }}
                     </h1>
                     <h2 class="subtitle">
-                        and their stories
+                        {{ __('menu.subbooks') }}
                     </h2>
 
                 </div>

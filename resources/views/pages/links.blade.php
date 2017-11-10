@@ -9,10 +9,10 @@
             <div class="hero-body">
                 <div class="wrapper" id="rev-3">
                     <h1 class="title is-poiret">
-                        Links
+                        {{ __('menu.links') }}
                     </h1>
                     <h2 class="subtitle">
-                        to some interesting stuff
+                        {{ __('menu.sublinks') }}
                     </h2>
 
                 </div>

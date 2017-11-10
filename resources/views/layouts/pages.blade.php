@@ -38,18 +38,20 @@
                         {{--content--}}
                     </div>
                     <div class="navbar-end">
-                        <a href="{{ route('index') }}" class="navbar-item is-tab">Home</a>
-                        <a href="{{ route('about') }}" class="navbar-item is-tab">About me</a>
-                        <a href="{{ route('books') }}" class="navbar-item is-tab">Books</a>
-                        <a href="{{ route('links')}}" class="navbar-item is-tab">Links</a>
-                        <a href="{{ route('contact') }}" class="navbar-item is-tab">Contact</a>
+                        <a href="{{ route('index') }}" class="navbar-item is-tab">{{ __('menu.home') }}</a>
+                        <a href="{{ route('about') }}" class="navbar-item is-tab">{{ __('menu.about') }}</a>
+                        <a href="{{ route('books') }}" class="navbar-item is-tab">{{ __('menu.books') }}</a>
+                        <a href="{{ route('links')}}" class="navbar-item is-tab">{{ __('menu.links') }}</a>
+                        <a href="{{ route('contact') }}" class="navbar-item is-tab">{{ __('menu.contact') }}</a>
                         <hr class="dropdown-divider">
 
                         <div class="navbar-item">
                             <div class="dropdown is-right is-hoverable language">
                                 <div class="dropdown-trigger">
                                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                        <span>en</span>
+                                        <span>
+                                            {{ app()->getLocale() }}
+                                        </span>
                                         <span class="m-l-5">
                                             <i class="fa fa-angle-down" aria-hidden="true"></i>
                                         </span>
@@ -57,8 +59,15 @@
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                     <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item">english</a>
-                                        <a class="dropdown-item">slovak</a>
+                                        @foreach( Config::get('language') as $lang => $language)
+                                            <a href="{{ url('language', $lang) }}" class="dropdown-item">
+                                                @if( $lang == App::getLocale() )
+                                                    <strong>{{ $language }}</strong>
+                                                @else
+                                                    {{ $language }}
+                                                @endif
+                                            </a>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

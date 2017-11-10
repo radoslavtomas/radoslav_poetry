@@ -18,6 +18,8 @@ Route::get('links', 'PagesController@links')->name('links');
 Route::get('contact', 'PagesController@contact')->name('contact');
 Route::get('book', 'PagesController@book')->name('book');
 
+Route::get('language/{lang}', 'PagesController@setLanguage');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

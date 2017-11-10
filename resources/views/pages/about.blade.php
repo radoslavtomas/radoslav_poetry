@@ -7,10 +7,10 @@
         <div class="hero-body">
             <div class="wrapper" id="rev-3">
                 <h1 class="title is-poiret">
-                    About me
+                    {{ __('menu.about') }}
                 </h1>
                 <h2 class="subtitle">
-                    and my poetry
+                    {{ __('menu.subabout') }}
                 </h2>
 
             </div>

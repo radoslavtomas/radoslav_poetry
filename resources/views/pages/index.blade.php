@@ -14,9 +14,9 @@
                 <div class="reveal-later">
                     <img src="/img/logo-1.png" alt="Radoslav Tomas Logo" class="image is-96x96" style="display: inline-block;">
                     <div class="m-t-50">
-                        <a href="{{ route('books') }}" class="m-r-20">Books</a>
-                        <a href="{{ route('about') }}" class="m-r-20">About me</a>
-                        <a href="{{ route('contact') }}" class="">Contact</a>
+                        <a href="{{ route('books') }}" class="m-r-20">{{ __('menu.books') }}</a>
+                        <a href="{{ route('about') }}" class="m-r-20">{{ __('menu.about') }}</a>
+                        <a href="{{ route('contact') }}" class="">{{ __('menu.contact') }}</a>
                     </div>
                 </div>
 
