@@ -20,9 +20,9 @@
             <div class="navbar is-transparent">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="{{ route('home') }}">
-                            <img src="{{ asset('img/logo-1.png') }}" alt="Radoslav Tomas Logo" class="m-r-10">
-                            <span class="title">Radoslav Tomas</span>
+                        <a class="navbar-item animLogo" href="{{ route('index') }}">
+                            <img src="{{ asset('img/logo-1.png') }}" alt="Radoslav Tomas Logo" class="logo animated m-r-10">
+                            <span class="title is-poiret is-size-3-desktop is-size-5-touch">{{ $user->name }}</span>
                         </a>
 
                         <button class="button navbar-burger" data-target="navMenu">
@@ -38,8 +38,7 @@
                         </div>
                         <div class="navbar-end">
                             @guest
-                                <a href="{{ route('login') }}" class="navbar-item">Login</a>
-                                <a href="{{ route('register') }}" class="navbar-item">Register</a>
+                                <span class="navbar-item">Welcome to your login</span>
                             @else
                                 <div class="navbar-item has-dropdown is-hoverable">
                                     <a class="navbar-link">Howdy Rado</a>
