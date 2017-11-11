@@ -8,20 +8,41 @@
         </div>
     </div>
 
+    @if ($errors->any())
+        <div class="notification is-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    {{--@if(Session::has('success'))--}}
+        {{--<div class="notification is-success">--}}
+            {{--<p>{{ Session::get('success') }}</p>--}}
+        {{--</div>--}}
+    {{--@endif--}}
+
+    @if(Session::has('success'))
+        <toast-component msg="{{ Session::get('success') }}"></toast-component>
+    @endif
+
     <div class="columns">
         <div class="column is-8 is-offset-2">
             <form action="{{ route('postProfile') }}" method="post">
+                {{ csrf_field() }}
                 <div class="columns">
                     <div class="field column is-6">
                         <label class="label">Name EN</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input class="input" name="name" type="text" value="{{ $user->name }}">
                         </div>
                     </div>
                     <div class="field column is-6">
                         <label class="label">Name SK</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input class="input" name="name_sk" type="text" value="{{ $user->profile->name_sk }}">
                         </div>
                     </div>
                 </div>
@@ -30,13 +51,13 @@
                     <div class="field column is-6">
                         <label class="label">Occupation EN</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input class="input" name="occupation" type="text" value="{{ $user->profile->occupation }}">
                         </div>
                     </div>
                     <div class="field column is-6">
                         <label class="label">Occupation SK</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Text input">
+                            <input class="input" name="occupation_sk" type="text" value="{{ $user->profile->occupation_sk }}">
                         </div>
                     </div>
                 </div>
@@ -45,7 +66,7 @@
                     <div class="field column is-6">
                         <label class="label">Email</label>
                         <div class="control has-icons-left">
-                            <input class="input" type="email" placeholder="Email" value="hello@">
+                            <input class="input" name="email" type="email" value="{{ $user->email }}">
                             <span class="icon is-small is-left">
                           <i class="fa fa-envelope"></i>
                         </span>
@@ -54,7 +75,7 @@
                     <div class="field column is-6">
                         <label class="label">Password</label>
                         <div class="control">
-                            <input class="input" type="password" placeholder="Update password?">
+                            <input class="input" name="password" type="password" placeholder="Update password?">
                         </div>
                     </div>
                 </div>
@@ -63,13 +84,13 @@
                     <div class="field column is-6">
                         <label class="label">Facebook</label>
                         <div class="control">
-                            <input class="input" type="url" placeholder="facebook">
+                            <input class="input" type="url" name="facebook" value="{{ $user->profile->facebook }}">
                         </div>
                     </div>
                     <div class="field column is-6">
                         <label class="label">Skype</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Skype">
+                            <input class="input" type="text" name="skype" value="{{ $user->profile->skype }}">
                         </div>
                     </div>
                 </div>
@@ -77,14 +98,14 @@
                 <div class="field">
                     <label class="label">About me</label>
                     <div class="control">
-                        <textarea class="textarea wysiwyg"></textarea>
+                        <textarea name="about" class="textarea wysiwyg">{{ $user->profile->about }}</textarea>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">O mne</label>
                     <div class="control">
-                        <textarea class="textarea wysiwyg"></textarea>
+                        <textarea name="about_sk" class="textarea wysiwyg">{{ $user->profile->about_sk }}</textarea>
                     </div>
                 </div>
 
