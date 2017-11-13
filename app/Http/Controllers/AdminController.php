@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -67,5 +68,36 @@ class AdminController extends Controller
 		Session::flash('success', 'Your profile has been successfully updated.');
 
 		return redirect()->route('getProfile');
+	}
+
+	public function getBackgrounds()
+	{
+		$pages = Page::all();
+		return view('admin.backgrounds')
+			->with('pages', $pages);
+	}
+
+	public function postBackgrounds(Request $request)
+	{
+		$request->validate([
+			'slide_color_home' => 'required|string',
+			'slide_color_about' => 'required|string',
+			'slide_color_books' => 'required|string',
+			'slide_color_links' => 'required|string',
+			'slide_color_contact' => 'required|string',
+		]);
+
+		$pages = Page::all();
+
+		if($request->hasFile('bg_home'))
+		{
+			$request->validate([
+				'bg_home' => 'image'
+			]);
+			$bg_home = $request->bg_home;
+			$bg_home_new_name = time().$bg_home->getClientOriginalName();
+			$bg_home->move('uploads/backgrounds/', $bg_home_new_name);
+			$post->featured_image = 'uploads/posts/'.$featured_image_new_name;
+		}
 	}
 }

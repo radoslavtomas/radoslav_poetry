@@ -44,6 +44,9 @@ Route::middleware('auth')->prefix('admin')->group(function() {
 	Route::get('profile', 'AdminController@getProfile')->name('getProfile');
 	Route::post('profile', 'AdminController@postProfile')->name('postProfile');
 
+	Route::get('backgrounds', 'AdminController@getBackgrounds')->name('getBackgrounds');
+	Route::post('backgrounds', 'AdminController@postBackgrounds')->name('postBackgrounds');
+
 //	Route::get('about', 'AdminController@getAbout')->name('getAbout');
 //	Route::post('about', 'AdminController@postAbout')->name('postAbout');
 //

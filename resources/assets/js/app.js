@@ -19,6 +19,7 @@ Vue.use(Buefy);
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('toast-component', require('./components/ToastComponent.vue'));
+Vue.component('file-upload-component', require('./components/FileUploadComponent.vue'));
 
 const app = new Vue({
     el: '#app'

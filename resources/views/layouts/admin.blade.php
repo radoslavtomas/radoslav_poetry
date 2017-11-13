@@ -45,7 +45,7 @@
 
                                     <div class="navbar-dropdown">
                                         <a href="{{ route('getProfile') }}" class="navbar-item">Profile</a>
-                                        <a href="#" class="navbar-item">Settings</a>
+                                        <a href="{{ route('getBackgrounds') }}" class="navbar-item">Backgrounds</a>
                                         <hr class="navbar-divider">
                                         <a href="" class="navbar-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
