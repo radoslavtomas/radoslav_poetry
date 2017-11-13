@@ -88,16 +88,28 @@ class AdminController extends Controller
 		]);
 
 		$pages = Page::all();
+		$names = Page::all('name_short');
 
-		if($request->hasFile('bg_home'))
+		foreach( $names as $index=>$name )
 		{
-			$request->validate([
-				'bg_home' => 'image'
-			]);
-			$bg_home = $request->bg_home;
-			$bg_home_new_name = time().$bg_home->getClientOriginalName();
-			$bg_home->move('uploads/backgrounds/', $bg_home_new_name);
-			$post->featured_image = 'uploads/posts/'.$featured_image_new_name;
+			$short_name = 'bg_'.$name->name_short;
+			if($request->hasFile($short_name))
+			{
+				$request->validate([
+					$short_name => 'image'
+				]);
+				$bg = $request->$short_name;
+				$bg_new_name = time().$bg->getClientOriginalName();
+				$bg->move('uploads/backgrounds/', $bg_new_name);
+				$link = $pages->where('name_short', $name->name_short);
+				$link[$index]->background = '/uploads/backgrounds/'.$bg_new_name;
+				$link[$index]->save();
+			}
 		}
+
+		Session::flash('success', 'Backgrounds and colors were successfully updated');
+
+		return redirect()->route('getBackgrounds');
+
 	}
 }

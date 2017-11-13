@@ -61,6 +61,10 @@
         </header>{{--header ends--}}
 
         <main>
+            @if(Session::has('success'))
+                <toast-component msg="{{ Session::get('success') }}"></toast-component>
+            @endif
+
             <div class="container">
                 @yield('content')
             </div>

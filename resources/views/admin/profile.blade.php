@@ -24,9 +24,9 @@
         {{--</div>--}}
     {{--@endif--}}
 
-    @if(Session::has('success'))
-        <toast-component msg="{{ Session::get('success') }}"></toast-component>
-    @endif
+    {{--@if(Session::has('success'))--}}
+        {{--<toast-component msg="{{ Session::get('success') }}"></toast-component>--}}
+    {{--@endif--}}
 
     <div class="columns">
         <div class="column is-8 is-offset-2">
