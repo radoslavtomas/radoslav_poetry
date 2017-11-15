@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -56,7 +57,27 @@ class PagesController extends Controller
 
 	public function links()
 	{
-		return view('pages.links');
+		if ( App::getLocale() == 'en' )
+		{
+			$linksAll = Link::all()->first();
+			$links = $linksAll->links;
+			$video = $linksAll->video;
+
+			return view('pages.links')
+				->with('links', $links)
+				->with('video', $video);
+		}
+		elseif ( App::getLocale() == 'sk' )
+		{
+			$linksAll = Link::all()->first();
+			$links = $linksAll->links_sk;
+			$video = $linksAll->video_sk;
+
+			return view('pages.links')
+				->with('links', $links)
+				->with('video', $video);
+		}
+
 	}
 
 	public function contact()

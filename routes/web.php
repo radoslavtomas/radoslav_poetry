@@ -47,9 +47,9 @@ Route::middleware('auth')->prefix('admin')->group(function() {
 	Route::get('backgrounds', 'AdminController@getBackgrounds')->name('getBackgrounds');
 	Route::post('backgrounds', 'AdminController@postBackgrounds')->name('postBackgrounds');
 
-//	Route::get('about', 'AdminController@getAbout')->name('getAbout');
-//	Route::post('about', 'AdminController@postAbout')->name('postAbout');
-//
+	Route::get('links', 'AdminController@getLinks')->name('getLinks');
+	Route::post('links', 'AdminController@postLinks')->name('postLinks');
+
 //	Route::resource('portfolio', 'PortfolioController');
 //
 //	Route::resource('profile', 'ProfileController');

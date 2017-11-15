@@ -24,14 +24,18 @@
                 <div class="column is-8 is-offset-2 has-text-centered">
                     <h3 class="is-size-3 is-poiret m-b-20">Interviews</h3>
                     <div class="myInterviews content m-b-30">
-                        <p class="myInterview"><small>sme.sk</small> - <a href="#">To, že rozmýšľam nad básňami, zo mňa nerobí lepšieho človeka</a></p>
-                        <p class="myInterview"><small>bookportrait.sk</small> - <a href="#">Strážay v interiéri Radoslava Tomáša</a></p>
-                        <p class="myInterview"><small>CIL</small> - <a href="#">Profile in The Centre for Information on Literature</a></p>
-                        <p class="myInterview"><small>martinus.sk</small> - <a href="#">Poézia nie je zisková, je to záležitosť menšiny</a></p>
+                        {{--<p class="myInterview"><small>sme.sk</small> - <a href="#">To, že rozmýšľam nad básňami, zo mňa nerobí lepšieho človeka</a></p>--}}
+                        {{--<p class="myInterview"><small>bookportrait.sk</small> - <a href="#">Strážay v interiéri Radoslava Tomáša</a></p>--}}
+                        {{--<p class="myInterview"><small>CIL</small> - <a href="#">Profile in The Centre for Information on Literature</a></p>--}}
+                        {{--<p class="myInterview"><small>martinus.sk</small> - <a href="#">Poézia nie je zisková, je to záležitosť menšiny</a></p>--}}
+                        {!! $links !!}
                     </div>
                     <h3 class="is-size-3 is-poiret m-b-20">Video</h3>
-                    <div class="videoWrapper">
-                        <iframe width="482" height="270" border="0" frameborder="0" scrolling="no" style="padding:0px; margin:0px; border: 0px;" src="//www.sme.sk/vp/17238/" allowFullScreen></iframe>
+                    {{--<div class="videoWrapper">--}}
+                        {{--<iframe width="482" height="270" border="0" frameborder="0" scrolling="no" style="padding:0px; margin:0px; border: 0px;" src="//www.sme.sk/vp/17238/" allowFullScreen></iframe>--}}
+                    {{--</div>--}}
+                    <div class="content">
+                        {!! $video !!}
                     </div>
                 </div>
             </div>

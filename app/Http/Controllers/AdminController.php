@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use App\Page;
 use App\User;
 use Illuminate\Http\Request;
@@ -116,5 +117,34 @@ class AdminController extends Controller
 
 		Session::flash('success', 'Backgrounds and colors were successfully updated');
 		return redirect()->route('getBackgrounds');
+	}
+
+	public function getLinks()
+	{
+		$links = Link::all()->first();
+		return view('admin.links')
+			->with('links', $links);
+	}
+
+	public function postLinks(Request $request)
+	{
+		$request->validate([
+			'links' => 'required|string',
+			'links_sk' => 'required|string',
+			'video' => 'required|string',
+			'video_sk' => 'required|string',
+		]);
+
+		$links = Link::all()->first();
+
+		$links->links = $request->links;
+		$links->links_sk = $request->links_sk;
+		$links->video = $request->video;
+		$links->video_sk = $request->video_sk;
+
+		$links->save();
+
+		Session::flash('success', 'Links have been successfully updated');
+		return redirect()->route('getLinks');
 	}
 }
