@@ -8,12 +8,12 @@
             <div class="hero-body">
                 <div class="wrapper" id="rev-3">
                     <h1 class="title is-poiret">
-                        Status reports
+                        @if( App::getLocale() == 'en' )
+                            {{ $book->name }}
+                        @elseif( App::getLocale() == 'sk' )
+                            {{ $book->name_sk }}
+                        @endif
                     </h1>
-                    <h2 class="subtitle">
-
-                    </h2>
-
                 </div>
             </div>
         </div>
@@ -25,22 +25,38 @@
                     <div class="columns">
 
                         <div class="column is-3 has-text-centered">
-                            <img src="{{ asset('img/covers/status_reports_cover.png') }}">
+                            <img class="has-border" src="{{ asset($book->cover) }}">
                         </div>
 
                         <div class="column is-9">
-                            <span class="title is-size-4 m-r-10"><strong>Status reports</strong></span> <small>(2011)</small>
-                            <p class="m-t-30 m-b-15">
-                                My latest book so far started as an experiment on social networks. Over a period of one year I kept posting poems written by authors from all over the world. Occasionally, I posted my own poem signed by a fictive poet from some European country. When others found out about this experiment we started a creative game with names, gender identities and culture. A selection from these poems by fictive authors was published in Status reports (Statusové hlásenia).
-                            </p>
+                            <span class="title is-size-4 m-r-10">
+                                <strong>
+                                    @if( App::getLocale() == 'en' )
+                                        {{ $book->name }}
+                                    @elseif( App::getLocale() == 'sk' )
+                                        {{ $book->name_sk }}
+                                    @endif
+                                </strong></span>
+                            <small>(2011)</small>
+                            <div class="content m-t-30 m-b-15">
+                                @if( App::getLocale() == 'en' )
+                                    {{ $book->description }}
+                                @elseif( App::getLocale() == 'sk' )
+                                    {{ $book->description_sk }}
+                                @endif
+                            </div>
                             <nav class="level is-mobile">
                                 <div class="level-left">
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fa fa-download"></i></span>
+                                    <a href="{{ asset($book->download) }}" class="level-item button is-small is-info is-outlined m-r-10">
+                                        <span class="icon is-small m-r-5"><i class="fa fa-download"></i></span>
+                                        {{ __('books.download') }}
                                     </a>
-                                    <a class="level-item">
-                                        <span class="icon is-small"><i class="fa fa-shopping-cart"></i></span>
-                                    </a>
+                                    @if( $book->buy != '')
+                                        <a class="level-item button is-small is-info is-outlined">
+                                            <span class="icon is-small m-r-5"><i class="fa fa-shopping-cart"></i></span>
+                                            {{ __('books.buy') }}
+                                        </a>
+                                    @endif
                                 </div>
                             </nav>
 
@@ -48,66 +64,61 @@
                             <br>
 
                             <article class="content">
-
-                                <h3>Nazov basne</h3>
-
-                                <p>
-                                    Vezmi ma znova<br>
-                                    do vlaku, o ktorom<br>
-                                    sa nám snívalo,<br>
-                                    mali sme šestnásť a neprekážalo<br>
-                                    nám šúpať pomaranče<br>
-                                    holými prstami. Alica,<br>
-                                    čo robíš práve teraz? Nezabudni<br>
-                                    na všetky tie príchody<br>
-                                    a utekania. Trvali milióny rokov.<br>
-                                    A všetky boli naše.<br>
-                                </p>
-                                <br>
-                                <br>
-                                <p>
-                                    Vezmi ma znova<br>
-                                    do vlaku, o ktorom<br>
-                                    sa nám snívalo,<br>
-                                    mali sme šestnásť a neprekážalo<br>
-                                    nám šúpať pomaranče<br>
-                                    holými prstami. Alica,<br>
-                                    čo robíš práve teraz? Nezabudni<br>
-                                    na všetky tie príchody<br>
-                                    a utekania. Trvali milióny rokov.<br>
-                                    A všetky boli naše.<br>
-                                </p>
-                                <br>
-                                <br>
-                                <p>
-                                    Vezmi ma znova<br>
-                                    do vlaku, o ktorom<br>
-                                    sa nám snívalo,<br>
-                                    mali sme šestnásť a neprekážalo<br>
-                                    nám šúpať pomaranče<br>
-                                    holými prstami. Alica,<br>
-                                    čo robíš práve teraz? Nezabudni<br>
-                                    na všetky tie príchody<br>
-                                    a utekania. Trvali milióny rokov.<br>
-                                    A všetky boli naše.<br>
-                                </p>
+                                @if( App::getLocale() == 'en' )
+                                    {!! $book->poems !!}
+                                @elseif( App::getLocale() == 'sk' )
+                                    {!! $book->poems_sk !!}
+                                @endif
                             </article>
 
                             <br>
                             <br>
 
-                            <div>
-                                <h3 class="is-size-5">STATUS REPORTS</h3>
-                                <p>Publishing house: Kon-Press, Trnava, Slovakia, 2011. Illustrations Milan Ladyka. Paperback, 56 pages, ISBN 9788085413663.</p>
+                            <div class="m-b-40">
+                                <h3 class="is-size-5 is-uppercase">
+                                    @if( App::getLocale() == 'en' )
+                                        {{ $book->name }}
+                                    @elseif( App::getLocale() == 'sk' )
+                                        {{ $book->name_sk }}
+                                    @endif
+                                </h3>
+                                <p>
+                                    @if( App::getLocale() == 'en' )
+                                        {{ $book->meta }}
+                                    @elseif( App::getLocale() == 'sk' )
+                                        {{ $book->meta_sk }}
+                                    @endif
+                                </p>
                             </div>
 
+                            <div class="level book-cta">
+                                <div class="level-left">
+                                    <div class="level-item">
+                                        <a class="button is-info is-outlined is-small" href="{{ route('books') }}">
+                                            <span class="icon is-small m-r-5"><i class="fa fa-arrow-left"></i></span>
+                                            {{ __('books.back') }}
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="level-right">
+                                    <div class="level-item">
+                                        @foreach( $books as $bk )
+                                            <a class="button is-primary is-outlined is-small m-b-10" href="{{ route('book.single', [$bk->slug]) }}">
+                                                <span class="icon is-small m-r-5"><i class="fa fa-arrow-right"></i></span>
+                                                @if( App::getLocale() == 'en' )
+                                                    {{ $bk->name }}
+                                                @elseif( App::getLocale() == 'sk' )
+                                                    {{ $bk->name_sk }}
+                                                @endif
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-
                     </div>
 
                 </article>
-
 
             </div>
         </div>
@@ -117,8 +128,17 @@
 @section('styles')
     <style>
         .hero {
-            background: url('/img/books/vlk_bg.jpg') center center no-repeat;
+            background: url('{{ $book->background }}') center center no-repeat;
             background-size: cover;
+        }
+
+        .book-cta {
+            align-items: flex-start;
+        }
+
+        .book-cta  .level-item {
+            flex-direction: column;
+            align-items: flex-end;
         }
 
     </style>
