@@ -47,7 +47,7 @@
                                 <div class="color-preview" style="background-color: {{ $page->slide_color }}"></div>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input" name="slide_color_{{ $page->name_short }}" type="text" value="{{ $page->slide_color }}">
+                                        <input class="input" name="{{ $page->name_short }}" type="text" value="{{ $page->slide_color }}">
                                     </div>
                                 </div>
                             </div>

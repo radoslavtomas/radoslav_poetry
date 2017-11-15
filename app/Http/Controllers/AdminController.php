@@ -80,36 +80,41 @@ class AdminController extends Controller
 	public function postBackgrounds(Request $request)
 	{
 		$request->validate([
-			'slide_color_home' => 'required|string',
-			'slide_color_about' => 'required|string',
-			'slide_color_books' => 'required|string',
-			'slide_color_links' => 'required|string',
-			'slide_color_contact' => 'required|string',
+			'home' => 'required|string',
+			'about' => 'required|string',
+			'books' => 'required|string',
+			'links' => 'required|string',
+			'contact' => 'required|string',
 		]);
 
 		$pages = Page::all();
 		$names = Page::all('name_short');
 
-		foreach( $names as $index=>$name )
+		foreach ( $names as $name )
 		{
-			$short_name = 'bg_'.$name->name_short;
-			if($request->hasFile($short_name))
+			// manage updating slide_colors
+			$page = $pages->where('name_short', $name->name_short)->first();
+			$page_string = $name->name_short;
+			$page->slide_color = $request->$page_string;
+			$page->save();
+
+			// manage updating background images
+			$query_name = 'bg_'.$name->name_short;
+			if($request->hasFile($query_name))
 			{
 				$request->validate([
-					$short_name => 'image'
+					$query_name => 'image'
 				]);
-				$bg = $request->$short_name;
+				$bg = $request->$query_name;
 				$bg_new_name = time().$bg->getClientOriginalName();
 				$bg->move('uploads/backgrounds/', $bg_new_name);
-				$link = $pages->where('name_short', $name->name_short);
-				$link[$index]->background = '/uploads/backgrounds/'.$bg_new_name;
-				$link[$index]->save();
+				$bg_page = $pages->where('name_short', $name->name_short)->first();
+				$bg_page->background = '/uploads/backgrounds/'.$bg_new_name;
+				$bg_page->save();
 			}
 		}
 
 		Session::flash('success', 'Backgrounds and colors were successfully updated');
-
 		return redirect()->route('getBackgrounds');
-
 	}
 }
