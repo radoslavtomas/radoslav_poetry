@@ -11,4 +11,10 @@ return [
 	'subbooks' => 'and their stories',
 	'sublinks' => 'to some interesting stuff',
 
+	// contact
+	'name' => 'Your name',
+	'email' => 'Your email',
+	'msg' => 'Write me...',
+	'button' => 'Send message'
+
 ];

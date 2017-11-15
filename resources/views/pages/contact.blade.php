@@ -7,23 +7,23 @@
                 <div class="columns">
                     <div class="field column is-6">
                         <p class="control">
-                            <input class="input" name="name" type="text" placeholder="Name">
+                            <input class="input" name="name" type="text" placeholder="{{ __('menu.name') }}">
                         </p>
                     </div>
 
                     <div class="field column is-6">
                         <p class="control">
-                            <input class="input" name="email" type="email" placeholder="Email">
+                            <input class="input" name="email" type="email" placeholder="{{ __('menu.email') }}">
                         </p>
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control">
-                        <textarea class="textarea" name="message" placeholder="Write me..."></textarea>
+                        <textarea class="textarea" name="message" placeholder="{{ __('menu.msg') }}"></textarea>
                     </div>
                 </div>
-                <a class="button is-danger is-inverted m-t-20">Send a message</a>
+                <a class="button is-danger is-inverted m-t-20">{{ __('menu.button') }}</a>
             </form>
         </div>
 @stop

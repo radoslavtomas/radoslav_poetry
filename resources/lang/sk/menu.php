@@ -10,4 +10,10 @@
 	 'subabout' => 'a mojej poézii',
 	 'subbooks' => 'a ich príbehy',
 	 'sublinks' => 'na ostatné zaujímavé veci',
+
+	 // contact
+	 'name' => 'Tvoje meno',
+	 'email' => 'Tvoj email',
+	 'msg' => 'Napíš mi...',
+	 'button' => 'Odošli správu'
  ];
