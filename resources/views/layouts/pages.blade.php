@@ -54,7 +54,7 @@
                         <div class="navbar-item">
                             <div class="dropdown is-right is-hoverable language">
                                 <div class="dropdown-trigger">
-                                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <button class="button is-small" aria-haspopup="true" aria-controls="dropdown-menu">
                                         <span>
                                             {{ app()->getLocale() }}
                                         </span>

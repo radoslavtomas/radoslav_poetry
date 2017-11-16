@@ -33,7 +33,7 @@
 @section('styles')
     <style>
         .hero {
-            background: url({{ asset('img/about.jpg') }}) center center no-repeat;
+            background: url({{ asset($settings->background) }}) center center no-repeat;
             background-size: cover;
         }
     </style>
@@ -45,7 +45,7 @@
     <script>
         var rev1 = new RevealFx(document.querySelector('#rev-3'), {
             revealSettings: {
-                bgcolor: '#1de9b6',
+                bgcolor: '{{ $settings->slide_color }}',
                 duration: 1000,
                 onCover: function (contentEl, revealerEl) {
                     contentEl.style.opacity = 1;

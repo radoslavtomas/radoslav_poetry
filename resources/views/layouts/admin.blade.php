@@ -47,6 +47,7 @@
                                         <a href="{{ route('getProfile') }}" class="navbar-item">Profile</a>
                                         <a href="{{ route('getBackgrounds') }}" class="navbar-item">Backgrounds</a>
                                         <a href="{{ route('getLinks') }}" class="navbar-item">Links</a>
+                                        <a href="{{ route('getBooks') }}" class="navbar-item">Books</a>
                                         <hr class="navbar-divider">
                                         <a href="" class="navbar-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

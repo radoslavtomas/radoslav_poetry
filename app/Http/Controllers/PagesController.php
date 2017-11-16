@@ -22,7 +22,7 @@ class PagesController extends Controller
 		if ( App::getLocale() == 'en' )
 		{
 			$user = User::first();
-			$settings = Page::all()->first();
+			$settings = Page::where('name_short', 'home')->first();
 			$name = $user->name;
 			$occupation = $user->profile->occupation;
 			return view('pages.index')
@@ -33,7 +33,7 @@ class PagesController extends Controller
 		elseif ( App::getLocale() == 'sk' )
 		{
 			$user = User::first();
-			$settings = Page::all()->first();
+			$settings = Page::where('name_short', 'home')->first();
 			$name = $user->profile->name_sk;
 			$occupation = $user->profile->occupation_sk;
 			return view('pages.index')
@@ -48,7 +48,7 @@ class PagesController extends Controller
 		if ( App::getLocale() == 'en' )
 		{
 			$user = User::first();
-			$settings = Page::all()->first();
+			$settings = Page::where('name_short', 'about')->first();
 			$about = $user->profile->about;
 			return view('pages.about')
 				->with('about', $about)
@@ -57,7 +57,7 @@ class PagesController extends Controller
 		elseif ( App::getLocale() == 'sk' )
 		{
 			$user = User::first();
-			$settings = Page::all()->first();
+			$settings = Page::where('name_short', 'about')->first();
 			$about = $user->profile->about_sk;
 			return view('pages.about')
 				->with('about', $about)
@@ -68,7 +68,7 @@ class PagesController extends Controller
 	public function books()
 	{
 		$books = Book::all();
-		$settings = Page::all()->first();
+		$settings = Page::where('name_short', 'books')->first();
 		return view('pages.books')
 			->with('books', $books)
 			->with('settings', $settings);
@@ -90,7 +90,7 @@ class PagesController extends Controller
 			$linksAll = Link::all()->first();
 			$links = $linksAll->links;
 			$video = $linksAll->video;
-			$settings = Page::all()->first();
+			$settings = Page::where('name_short', 'links')->first();
 
 			return view('pages.links')
 				->with('links', $links)
@@ -102,7 +102,7 @@ class PagesController extends Controller
 			$linksAll = Link::all()->first();
 			$links = $linksAll->links_sk;
 			$video = $linksAll->video_sk;
-			$settings = Page::all()->first();
+			$settings = Page::where('name_short', 'links')->first();
 
 			return view('pages.links')
 				->with('links', $links)
@@ -114,7 +114,7 @@ class PagesController extends Controller
 
 	public function contact()
 	{
-		$settings = Page::all()->first();
+		$settings = Page::where('name_short', 'links')->first();
 		return view('pages.contact')
 			->with('settings', $settings);
 	}

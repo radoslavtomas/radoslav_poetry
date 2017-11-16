@@ -95,6 +95,7 @@ A všetky boli naše.',
 			'buy' => 'http://www.martinus.sk/?uItem=120218',
 			'cover' => '/img/covers/status_reports_cover.png',
 			'background' => '/img/books/status_bg.jpg',
+			'slide_color' => '#ffa726',
 			'year' => 2011
 		]);
 
@@ -182,6 +183,7 @@ A všetky boli naše.',
 			'buy' => '',
 			'cover' => '/img/covers/wolves_weddings_cover.png',
 			'background' => '/img/books/vlk_bg.jpg',
+			'slide_color' => '#ffa726',
 			'year' => 2009
 		]);
 
@@ -269,6 +271,7 @@ A všetky boli naše.',
 			'buy' => '',
 			'cover' => '/img/covers/boy_cover.png',
 			'background' => '/img/books/boy_bg.jpg',
+			'slide_color' => '#ffa726',
 			'year' => 2005
 		]);
     }

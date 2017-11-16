@@ -18,17 +18,19 @@ class CreateBooksTable extends Migration
             $table->string('name');
             $table->string('name_sk');
             $table->string('slug');
+			$table->integer('year');
+			$table->string('cover');
             $table->text('description');
             $table->text('description_sk');
             $table->text('meta');
             $table->text('meta_sk');
             $table->text('poems')->nullable();
             $table->text('poems_sk');
-            $table->string('download');
             $table->string('buy')->nullable();
-            $table->string('cover');
+			$table->string('slide_color');
+			$table->string('download')->nullable();
             $table->string('background');
-            $table->integer('year');
+
             $table->timestamps();
         });
     }

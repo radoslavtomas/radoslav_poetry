@@ -47,11 +47,14 @@
                             </div>
                             <nav class="level is-mobile">
                                 <div class="level-left">
-                                    <a href="{{ asset($book->download) }}" class="level-item button is-small is-info is-outlined m-r-10">
-                                        <span class="icon is-small m-r-5"><i class="fa fa-download"></i></span>
-                                        {{ __('books.download') }}
-                                    </a>
-                                    @if( $book->buy != '')
+                                    @if( $book->download != '' || $book->download != null)
+                                        <a href="{{ asset($book->download) }}" class="level-item button is-small is-info is-outlined m-r-10">
+                                            <span class="icon is-small m-r-5"><i class="fa fa-download"></i></span>
+                                            {{ __('books.download') }}
+                                        </a>
+                                    @endif
+
+                                    @if( $book->buy != '' || $book->buy != null)
                                         <a class="level-item button is-small is-info is-outlined">
                                             <span class="icon is-small m-r-5"><i class="fa fa-shopping-cart"></i></span>
                                             {{ __('books.buy') }}

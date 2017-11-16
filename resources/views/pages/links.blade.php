@@ -24,10 +24,6 @@
                 <div class="column is-8 is-offset-2 has-text-centered">
                     <h3 class="is-size-3 is-poiret m-b-20">Interviews</h3>
                     <div class="myInterviews content m-b-30">
-                        {{--<p class="myInterview"><small>sme.sk</small> - <a href="#">To, že rozmýšľam nad básňami, zo mňa nerobí lepšieho človeka</a></p>--}}
-                        {{--<p class="myInterview"><small>bookportrait.sk</small> - <a href="#">Strážay v interiéri Radoslava Tomáša</a></p>--}}
-                        {{--<p class="myInterview"><small>CIL</small> - <a href="#">Profile in The Centre for Information on Literature</a></p>--}}
-                        {{--<p class="myInterview"><small>martinus.sk</small> - <a href="#">Poézia nie je zisková, je to záležitosť menšiny</a></p>--}}
                         {!! $links !!}
                     </div>
                     <h3 class="is-size-3 is-poiret m-b-20">Video</h3>
@@ -45,7 +41,7 @@
     @section('styles')
         <style>
             .hero {
-                background: url('/img/links.jpg') center center no-repeat;
+                background: url({{ $settings->background }}) center center no-repeat;
                 background-size: cover;
             }
         </style>
@@ -57,7 +53,7 @@
         <script>
             var rev1 = new RevealFx(document.querySelector('#rev-3'), {
                 revealSettings: {
-                    bgcolor: '#ba68c8',
+                    bgcolor: '{{ $settings->slide_color }}',
                     duration: 1000,
                     onCover: function (contentEl, revealerEl) {
                         contentEl.style.opacity = 1;

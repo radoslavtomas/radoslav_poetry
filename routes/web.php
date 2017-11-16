@@ -50,6 +50,13 @@ Route::middleware('auth')->prefix('admin')->group(function() {
 	Route::get('links', 'AdminController@getLinks')->name('getLinks');
 	Route::post('links', 'AdminController@postLinks')->name('postLinks');
 
+	Route::get('books', 'AdminController@getBooks')->name('getBooks');
+	Route::get('book/add', 'AdminController@addBook')->name('addBook');
+	Route::post('book/add', 'AdminController@postBookCreate')->name('book.create');
+	Route::get('book/{id}', 'AdminController@getBook')->name('getBook');
+	Route::put('book/{id}', 'AdminController@putBookUpdate')->name('book.update');
+	Route::delete('book/{id}', 'AdminController@deleteBook')->name('book.delete');
+
 //	Route::resource('portfolio', 'PortfolioController');
 //
 //	Route::resource('profile', 'ProfileController');

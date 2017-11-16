@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\Link;
 use App\Page;
 use App\User;
@@ -20,6 +21,11 @@ class AdminController extends Controller
 		return view('admin.dashboard');
 	}
 
+	/**
+	 * Show the application page for updating profile.
+	 *
+	 * @return $this
+	 */
 	public function getProfile()
 	{
 		$user = User::first();
@@ -27,6 +33,12 @@ class AdminController extends Controller
 			->with('user', $user);
 	}
 
+	/**
+	 * Update application profile page
+	 *
+	 * @param Request $request
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
 	public function postProfile(Request $request)
 	{
 		$request->validate([
@@ -71,6 +83,11 @@ class AdminController extends Controller
 		return redirect()->route('getProfile');
 	}
 
+	/**
+	 * Show the application page for managing backgrounds and slide colors.
+	 *
+	 * @return $this
+	 */
 	public function getBackgrounds()
 	{
 		$pages = Page::all();
@@ -78,6 +95,12 @@ class AdminController extends Controller
 			->with('pages', $pages);
 	}
 
+	/**
+	 * Update application backgrounds and slide colors
+	 *
+	 * @param Request $request
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
 	public function postBackgrounds(Request $request)
 	{
 		$request->validate([
@@ -119,6 +142,11 @@ class AdminController extends Controller
 		return redirect()->route('getBackgrounds');
 	}
 
+	/**
+	 * Show the application page for managing links
+	 *
+	 * @return $this
+	 */
 	public function getLinks()
 	{
 		$links = Link::all()->first();
@@ -126,6 +154,12 @@ class AdminController extends Controller
 			->with('links', $links);
 	}
 
+	/**
+	 * Update links and videos
+	 *
+	 * @param Request $request
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
 	public function postLinks(Request $request)
 	{
 		$request->validate([
@@ -146,5 +180,123 @@ class AdminController extends Controller
 
 		Session::flash('success', 'Links have been successfully updated');
 		return redirect()->route('getLinks');
+	}
+
+	/**
+	 *
+	 */
+	public function getBooks()
+	{
+		$books = Book::all();
+		return view('admin.books.books')
+			->with('books', $books);
+	}
+
+	public function getBook($id)
+	{
+		$book = Book::findOrFail($id);
+		return view('admin.books.edit')
+			->with('book', $book);
+	}
+
+	public function addBook()
+	{
+		return view('admin.books.create');
+	}
+
+	public function putBookUpdate(Request $request, $id)
+	{
+		$request->validate([
+			'name' => 'string|required',
+			'name_sk' => 'string|required',
+			'slug' => 'string|required',
+			'description' => 'string|required',
+			'description_sk' => 'string|required',
+			'meta' => 'string|required',
+			'meta_sk' => 'string|required',
+			'poems_sk' => 'string|required',
+			'slide_color' => 'string|required',
+			'year' => 'string|required',
+		]);
+
+		$book = Book::findOrFail($id);
+
+		if($request->hasFile('download'))
+		{
+			$request->validate([
+				'download' => 'file|mimes:pdf'
+			]);
+			$download = $request->download;
+			$download_new_name = time().$download->getClientOriginalName();
+			$download->move('uploads/downloads/', $download_new_name);
+			$book->download = '/uploads/downloads/'.$download_new_name;
+		}
+
+		if($request->hasFile('cover'))
+		{
+			$request->validate([
+				'cover' => 'image'
+			]);
+			$cover = $request->cover;
+			$cover_new_name = time().$cover->getClientOriginalName();
+			$cover->move('uploads/covers/', $cover_new_name);
+			$book->cover = '/uploads/covers/'.$cover_new_name;
+		}
+
+		if($request->hasFile('background'))
+		{
+			$request->validate([
+				'background' => 'image'
+			]);
+			$background = $request->background;
+			$background_new_name = time().$background->getClientOriginalName();
+			$background->move('uploads/backgrounds/', $background_new_name);
+			$book->background = '/uploads/backgrounds/'.$background_new_name;
+		}
+
+		if($request->poems != '' || $request->poems != null)
+		{
+			$request->validate([
+				'poems' => 'string'
+			]);
+			$book->poems = $request->poems;
+		}
+
+		if($request->buy != '' || $request->buy != null)
+		{
+			$request->validate([
+				'buy' => 'string'
+			]);
+			$book->buy = $request->buy;
+		}
+
+		$book->name = $request->name;
+		$book->name_sk = $request->name_sk;
+		$book->slug = $request->slug;
+		$book->description = $request->description;
+		$book->description_sk = $request->description_sk;
+		$book->meta = $request->meta;
+		$book->meta_sk = $request->meta_sk;
+
+		$book->poems_sk = $request->poems_sk;
+		$book->buy = $request->buy;
+		$book->slide_color = $request->slide_color;
+		$book->year = $request->year;
+
+		$book->save();
+
+		Session::flash('success', 'The book has been successfully updated.');
+
+		return redirect()->route('getBook', [$book->id]);
+	}
+
+	public function postBookCreate(Request $request)
+	{
+		//
+	}
+
+	public function deleteBook($id)
+	{
+		dd($id);
 	}
 }
