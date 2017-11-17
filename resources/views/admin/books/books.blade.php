@@ -51,10 +51,10 @@
                         </td>
 
                         <td>
-                            <form action="{{ route('book.delete', [$book->id]) }}">
+                            <a class="button is-danger is-outlined is-small" href="{{ route('book.delete', [$book->id]) }}" onclick="event.preventDefault(); confirm('Sure?'); document.getElementById('delete-book-{{ $book->id }}').submit();">Delete</a>
+                            <form action="{{ route('book.delete', [$book->id]) }}" method="post" id="delete-book-{{ $book->id }}" style="display: none;">
                                 {{ csrf_field() }}
                                 {{ method_field('delete') }}
-                                <button class="button is-danger is-outlined is-small" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>

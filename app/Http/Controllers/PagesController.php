@@ -67,7 +67,7 @@ class PagesController extends Controller
 
 	public function books()
 	{
-		$books = Book::all();
+		$books = Book::all()->sortByDesc('year');
 		$settings = Page::where('name_short', 'books')->first();
 		return view('pages.books')
 			->with('books', $books)

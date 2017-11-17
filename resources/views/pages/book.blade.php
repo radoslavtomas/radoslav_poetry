@@ -40,9 +40,9 @@
                             <small>(2011)</small>
                             <div class="content m-t-30 m-b-15">
                                 @if( App::getLocale() == 'en' )
-                                    {{ $book->description }}
+                                    {!! $book->description !!}
                                 @elseif( App::getLocale() == 'sk' )
-                                    {{ $book->description_sk }}
+                                    {!! $book->description_sk !!}
                                 @endif
                             </div>
                             <nav class="level is-mobile">
@@ -153,7 +153,7 @@
     <script>
         var rev1 = new RevealFx(document.querySelector('#rev-3'), {
             revealSettings: {
-                bgcolor: '#ffa726',
+                bgcolor: '{{ $book->slide_color }}',
                 duration: 1000,
                 onCover: function (contentEl, revealerEl) {
                     contentEl.style.opacity = 1;

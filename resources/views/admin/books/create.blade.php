@@ -26,13 +26,13 @@
                     <div class="field column is-6">
                         <label class="label">Name EN</label>
                         <div class="control">
-                            <input class="input" name="name" type="text" value="">
+                            <input class="input" name="name" type="text" value="{{ old('name') }}">
                         </div>
                     </div>
                     <div class="field column is-6">
                         <label class="label">Name SK</label>
                         <div class="control">
-                            <input class="input" name="name_sk" type="text" value="">
+                            <input class="input" name="name_sk" type="text" value="{{ old('name_sk') }}">
                         </div>
                     </div>
                 </div>
@@ -41,13 +41,13 @@
                     <div class="field column is-6">
                         <label class="label">Slug</label>
                         <div class="control">
-                            <input class="input" name="slug" type="text" value="">
+                            <input class="input" name="slug" type="text" value="{{ old('slug') }}">
                         </div>
                     </div>
                     <div class="field column is-6">
                         <label class="label">Year</label>
                         <div class="control">
-                            <input class="input" name="year" type="text" value="">
+                            <input class="input" name="year" type="text" value="{{ old('year') }}">
                         </div>
                     </div>
                 </div>
@@ -64,14 +64,14 @@
                     <div class="field column is-6">
                         <label class="label">Meta EN</label>
                         <div class="control">
-                            <input class="input" name="meta" type="text" value="">
+                            <input class="input" name="meta" type="text" value="{{ old('meta') }}">
                         </div>
                     </div>
 
                     <div class="field column is-6">
                         <label class="label">Meta SK</label>
                         <div class="control">
-                            <input class="input" name="meta_sk" type="text" value="">
+                            <input class="input" name="meta_sk" type="text" value="{{ old('meta_sk') }}">
                         </div>
                     </div>
                 </div>
@@ -81,28 +81,28 @@
                 <div class="field">
                     <label class="label">Description EN</label>
                     <div class="control">
-                        <textarea name="description" class="textarea wysiwyg"></textarea>
+                        <textarea name="description" class="textarea wysiwyg">{{ old('description') }}</textarea>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Description SK</label>
                     <div class="control">
-                        <textarea name="description_sk" class="textarea wysiwyg"></textarea>
+                        <textarea name="description_sk" class="textarea wysiwyg">{{ old('description_sk') }}</textarea>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Poems EN</label>
                     <div class="control">
-                        <textarea name="poems" class="textarea wysiwyg"></textarea>
+                        <textarea name="poems" class="textarea wysiwyg">{{ old('poems') }}</textarea>
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Poems SK</label>
                     <div class="control">
-                        <textarea name="poems_sk" class="textarea wysiwyg"></textarea>
+                        <textarea name="poems_sk" class="textarea wysiwyg">{{ old('poems_sk') }}</textarea>
                     </div>
                 </div>
 
@@ -110,13 +110,13 @@
                     <div class="field column is-6">
                         <label class="label">Buy</label>
                         <div class="control">
-                            <input class="input" name="buy" type="url" value="">
+                            <input class="input" name="buy" type="url" value="{{ old('buy') }}">
                         </div>
                     </div>
                     <div class="field column is-6">
                         <label class="label">Slide color</label>
                         <div class="control">
-                            <input class="input" name="slide_color" type="text" value="">
+                            <input class="input" name="slide_color" type="text" value="{{ old('slide_color') }}">
                         </div>
                     </div>
                 </div>

@@ -292,11 +292,87 @@ class AdminController extends Controller
 
 	public function postBookCreate(Request $request)
 	{
-		//
+		$request->validate([
+			'name' => 'string|required',
+			'name_sk' => 'string|required',
+			'slug' => 'string|required',
+			'description' => 'string|required',
+			'description_sk' => 'string|required',
+			'meta' => 'string|required',
+			'meta_sk' => 'string|required',
+			'poems_sk' => 'string|required',
+			'slide_color' => 'string|required',
+			'year' => 'string|required',
+			'cover' => 'image|required',
+			'background' => 'image|required'
+		]);
+
+		$book = Book::create([
+			'name' => $request->name,
+			'name_sk' => $request->name_sk,
+			'slug' => $request->slug,
+			'description' => $request->description,
+			'description_sk' => $request->description_sk,
+			'meta' => $request->meta,
+			'meta_sk' => $request->meta_sk,
+			'poems_sk' => $request->poems_sk,
+			'slide_color' => $request->slide_color,
+			'year' => $request->year,
+			'cover' => '',
+			'background' => ''
+		]);
+
+		$cover = $request->cover;
+		$cover_new_name = time().$cover->getClientOriginalName();
+		$cover->move('uploads/covers/', $cover_new_name);
+		$book->cover = '/uploads/covers/'.$cover_new_name;
+
+
+		$background = $request->background;
+		$background_new_name = time().$background->getClientOriginalName();
+		$background->move('uploads/backgrounds/', $background_new_name);
+		$book->background = '/uploads/backgrounds/'.$background_new_name;
+
+		if($request->poems != '' || $request->poems != null)
+		{
+			$request->validate([
+				'poems' => 'string'
+			]);
+			$book->poems = $request->poems;
+		}
+
+		if($request->buy != '' || $request->buy != null)
+		{
+			$request->validate([
+				'buy' => 'string'
+			]);
+			$book->buy = $request->buy;
+		}
+
+		if($request->hasFile('download'))
+		{
+			$request->validate([
+				'download' => 'file|mimes:pdf'
+			]);
+			$download = $request->download;
+			$download_new_name = time().$download->getClientOriginalName();
+			$download->move('uploads/downloads/', $download_new_name);
+			$book->download = '/uploads/downloads/'.$download_new_name;
+		}
+
+		$book->save();
+
+		Session::flash('success', 'The book has been successfully added.');
+
+		return redirect()->route('getBook', [$book->id]);
 	}
 
 	public function deleteBook($id)
 	{
-		dd($id);
+		Book::destroy($id);
+
+		Session::flash('success', 'The book has been deleted.');
+
+		return redirect()->route('getBooks');
 	}
 }
