@@ -5,10 +5,6 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', 'PagesController@index')->name('index');
@@ -57,8 +53,4 @@ Route::middleware('auth')->prefix('admin')->group(function() {
 	Route::get('book/{id}', 'AdminController@getBook')->name('getBook');
 	Route::put('book/{id}', 'AdminController@putBookUpdate')->name('book.update');
 	Route::delete('book/{id}', 'AdminController@deleteBook')->name('book.delete');
-
-//	Route::resource('portfolio', 'PortfolioController');
-//
-//	Route::resource('profile', 'ProfileController');
 });

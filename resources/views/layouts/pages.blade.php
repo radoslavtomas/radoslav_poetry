@@ -3,12 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Official website of Radoslav Tomas - Poet">
+    <meta name="keywords"  content="poet, poetry, poezia, liverpool, uk, slovakia, books, knihy, writing, pisanie" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>
+        @yield('title') |
+        @if( App::getLocale() == 'en' )
+            {{ $user->name }}
+        @elseif( App::getLocale() == 'sk' )
+            {{ $user->profile->name_sk }}
+        @endif
+    </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

@@ -1,5 +1,8 @@
 @extends('layouts.pages')
 
+@section('title')
+    {{ __('menu.contact') }}
+@stop
 
 @section('content')
 
@@ -43,8 +46,6 @@
             </div>
             <button type="submit" class="button is-danger is-inverted m-t-20">{{ __('menu.button') }}</button>
         </form>
-
-
     </div>
 @stop
 

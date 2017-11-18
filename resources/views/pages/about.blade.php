@@ -1,5 +1,9 @@
 @extends('layouts.pages')
 
+@section('title')
+    {{ __('menu.about') }}
+@stop
+
 @section('content')
 
     <section class="hero is-medium">

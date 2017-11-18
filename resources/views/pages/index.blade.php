@@ -1,5 +1,8 @@
 @extends('layouts.pages')
 
+@section('title')
+    {{ __('menu.home') }}
+@stop
 
 @section('content')
 
@@ -33,7 +36,6 @@
             background: url({{ $settings->background }}) center center no-repeat;
             background-size: cover;
         }
-
     </style>
 
 @stop

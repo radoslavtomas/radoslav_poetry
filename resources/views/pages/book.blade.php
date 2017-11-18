@@ -1,6 +1,12 @@
 @extends('layouts.pages')
 
-
+@section('title')
+    @if( App::getLocale() == 'en' )
+        {{ $book->name }}
+    @elseif( App::getLocale() == 'sk' )
+        {{ $book->name_sk }}
+    @endif
+@stop
 @section('content')
 
     <section class="hero is-medium">

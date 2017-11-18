@@ -1,5 +1,8 @@
 @extends('layouts.pages')
 
+@section('title')
+    {{ __('menu.books') }}
+@stop
 
 @section('content')
 
@@ -71,10 +74,6 @@
             background: url({{ $settings->background }}) center center no-repeat;
             background-size: cover;
         }
-
-        /*.bookCover img {*/
-            /*box-shadow: 5px 5px 5px #ccc;*/
-        /*}*/
     </style>
 
 @stop
