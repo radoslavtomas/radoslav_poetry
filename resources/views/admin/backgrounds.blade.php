@@ -89,28 +89,6 @@
 @endsection
 
 @section('scripts')
-
-    <script>
-        {{--var pages = {!! json_encode($pages->toArray()) !!};--}}
-
-        {{--console.log(pages.length);--}}
-
-        {{--for (var i = 0; i < pages.length; i++) {--}}
-            {{--var page = pages[i];--}}
-            {{--console.log(page);--}}
-            {{--console.log(page.id);--}}
-            {{--var file = document.getElementById("background-" + page.id);--}}
-            {{--file.onchange = function(){--}}
-                {{--if(file.files.length > 0)--}}
-                {{--{--}}
-                    {{--document.getElementById('background-name-' +page.id).innerHTML = file.files[0].name;--}}
-                {{--}--}}
-            {{--};--}}
-        {{--}--}}
-
-
-
-
-    </script>
+    
 
 @endsection
