@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Link;
+use App\Mail\ContactForm;
 use App\Page;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class PagesController extends Controller
 {
@@ -117,6 +120,28 @@ class PagesController extends Controller
 		$settings = Page::where('name_short', 'links')->first();
 		return view('pages.contact')
 			->with('settings', $settings);
+	}
+
+	public function postContact(Request $request)
+	{
+		$request->validate([
+		'name' => 'required',
+		'email' => 'email|required',
+		'message' => 'required'
+	]);
+
+		$data = array(
+			'email' => $request->email,
+			'name' => $request->name,
+			'body_message' => $request->message
+		);
+
+		Mail::to('radoslav.tomas@gmail.com')
+			->send(new ContactForm($data));
+
+		Session::flash('success', 'Your message has been successfully sent.');
+
+		return redirect()->route('contact');
 	}
 
 	public function setLanguage($lang)

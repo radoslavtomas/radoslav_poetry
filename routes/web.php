@@ -17,6 +17,7 @@ Route::get('books', 'PagesController@books')->name('books');
 Route::get('books/{slug}', 'PagesController@book')->name('book.single');
 Route::get('links', 'PagesController@links')->name('links');
 Route::get('contact', 'PagesController@contact')->name('contact');
+Route::post('contact', 'PagesController@postContact')->name('postContact');
 
 Route::get('language/{lang}', 'PagesController@setLanguage');
 
