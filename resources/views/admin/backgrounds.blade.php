@@ -89,6 +89,6 @@
 @endsection
 
 @section('scripts')
-    
+
 
 @endsection

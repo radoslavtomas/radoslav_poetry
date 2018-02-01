@@ -20,6 +20,7 @@
                     </div>
                 @endif
 
+
                 <form action="{{ route('register') }}" method="POST">
                     {{ csrf_field() }}
 
